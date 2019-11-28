@@ -1,0 +1,231 @@
+html{
+	overflow-x: hidden;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	border: none;
+}
+p, a, h1, button {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+h1{
+	font-size: 40px;
+	font-weight: 400;
+	text-align: center;
+}
+p{
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+
+/* Navigation******************************************************************************************/
+
+#full-nav{
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	background-color: white;
+	top: 0px;
+}
+.logo{
+	padding:15px 15px 15px 30px;
+	width: 250px;
+}
+#topNav{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	z-index: 101;
+	background-color: white;
+	border-bottom: solid 5px #EAD300;
+}
+
+.nav-links{
+	overflow: hidden;
+	display: flex;
+	text-decoration: none;
+	text-align: center;
+}
+.nav-links button {
+	border: none;
+	float: left;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 20px 10px 20px;
+	font-weight: 600;
+	transition: 0.3s;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.page1-btn{
+	background-color:#EAD300;
+	color: white;
+	float: left;
+}
+
+.page2-btn{
+	background-color: white;
+	color: black;
+	float: left;
+}
+.page3-btn{
+	background-color: white;
+	color: black;
+	float: left;
+}
+.page1-btn:hover{
+	background-color:#EAD300;
+	color: white;
+	transition: .2s;
+}
+
+.page2-btn:hover{
+	background-color: #592B81;
+	color: white;
+	transition: .2s;
+}
+.page3-btn:hover{
+	background-color: #ED1D31;
+	color: white;
+	transition: .2s;
+}
+
+/* Main Container */
+.map{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 100%;
+}
+#treatment-map{
+	width: 70%;
+	margin: auto;
+	position: relative;
+	top: 60px;
+}
+#main-container{
+	margin: auto;
+	width: 100%;
+	padding-top: 130px;
+}
+#division-column1{
+	margin-top: 50px;
+	width: 100%;
+	padding: 50px 0px 50px 0px;
+	background-color: #EEEEEE;
+	display: flex;
+}
+.center-icon{
+	width: 60px;
+}
+.full-column{
+	width: 75%;
+	margin: auto;
+}
+.third-column{
+	width: calc(100%/3);
+	float: left;
+	padding: 10px;
+}
+.third-column img{
+	width: 100%;
+}
+
+
+/*footer*****************************************************************************************/
+
+#footer{
+	width: 100%;
+	background-color: #333333;
+	background-image: url("../Imgs/Graphics_footer.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 30px;
+	position:relative;
+	bottom: 0px;
+	height: auto;
+	float: none;
+}
+.footnotes{
+	color: white;
+	font-size: 12px;
+	font-weight: 100;
+}
+.footerlogo{
+	padding-top: 150px;
+	width: 20%;
+}
+.footertagline{
+	width: 50%;
+	padding-top: 20px;
+}
+
+/*Screen sizing****************************************************************************************/
+
+@media screen and (max-width:1024px){
+	#main-container{
+		width: 100%;
+}
+	.logo{
+		padding: 15px;
+		width: 115px;
+	}
+	.two-column{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width:768px){
+	#main-container{
+		width: 100%;	
+	}
+	.logo{
+		padding: 15px;
+		width: 115px;
+	}
+	.text-column{
+		width: 100%;
+	}
+	.one-column{
+		width: calc(100%/3);
+
+	}
+	.footerlogo{
+		width: 40%;
+	}
+	.footertagline{
+		width: 80%;
+	}
+}
+@media screen and (max-width:500px){
+	.one-column{
+		width: 50%;
+	}
+	.full-column{
+		width: 100%;
+		padding: 20px;
+	}
+	.footerlogo{
+		width: 60%;
+	}
+	.footertagline{
+		width: 100%;
+	}
+	.third-column{
+		width: 100%;
+		padding: 0px;
+		padding-top: 10px;
+	}
+	#division-column1{
+		padding: 10px;
+	}
+}
+

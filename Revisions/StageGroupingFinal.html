@@ -1,0 +1,119 @@
+
+<!DOCTYPE html> 
+<head>
+<title> lung grouping </title>
+</head>
+<body> 
+	<h1 style="color: green"> 
+     Stage grouping
+	</h1> 
+	
+	<p> 
+		Select one from the given options: 
+		<select id="select1"> 
+		<option selected value="Any T">Any T</option> 
+		
+          <option value="T1a">T1a</option> 
+			<option value="T1b">T1b</option> 
+			<option value="T1c">T1c</option> 
+          <option value="T2a">T2a</option> 
+			<option value="T2b">T2b</option> 
+			<option value="T3">T3</option> 
+          	<option value="T4">T4</option> 
+		
+		</select> 
+      	<select id="select2" > 
+      		<option selected value="Any N">Any N</option> 
+			<option value="N0">N0</option> 
+			<option value="N1">N1</option> 
+			<option value="N2">N2</option> 
+          		<option value="N3">N3</option>
+		</select> 
+      	<select id="select3" > 
+			<option value="M0">M0</option> 
+			
+		</select> 
+	</p> 
+	
+	<p> 
+		The value of the option selected is: 
+		<span class="output"></span> 
+	</p> 
+	
+	<button onclick="getOption()">
+		Submit
+	</button> 
+	
+	<script type="text/javascript">
+		function getOption() { 
+		var	select1Element = document.querySelector('#select1'); 		
+	var output1 =select1Element.options[select1Element.selectedIndex].value; 
+
+        var select2Element = document.querySelector('#select2'); 		
+		var output2 =select2Element.options[select2Element.selectedIndex].value; 
+
+     var select3Element = document.querySelector('#select3'); 		
+		var output3 =select3Element.options[select3Element.selectedIndex].value; 
+
+
+       
+          if(output1 =="T1a" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }else if(output1 =="T1b" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }else if(output1 =="T1c" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }
+          else if(output1 =="T2a" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }
+          else if(output1 =="T2b" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }
+          else if(output1 =="T3" && output2 =="N1" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }
+          else if(output1 =="T4" && output2 =="N1" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }
+          else if(output1 =="T1b" && output2 =="N1" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIA"; 
+          }
+          else if(output1 =="T1a" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+          }
+          else if(output1 =="T1b" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+          }
+           else if(output1 =="T1c" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+           }
+           else if(output1 =="T2a" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+             }  
+            else if(output1 =="T2b" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+          }
+            else if(output1 =="T3" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+          }
+            else if(output1 =="T4" && output2 =="N2" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIB"; 
+          }
+          else if( output1 =="T3" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIC"; 
+          }  
+          else if(output1 =="T4" && output2 =="N3" && output3 =="M0"){ 
+            document.querySelector('.output').textContent = "IIIC"; 
+          }
+          else {
+            document.querySelector('.output').textContent = "Other "; 
+          }
+    
+          
+			
+		} 
+	</script> 
+</body> 
+
+</html>					 

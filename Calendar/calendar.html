@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chemoradiation Calendar</title>
+	<link rel="stylesheet" href="fullcalendar.min.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="fullcalendar.print.css" type="text/css" media="print">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+	<div class="full-column hidden-print">
+		<div class="two-column">
+			<h1>To add in an appointment for a single day</h1>
+			<ul>
+				<li>Click on the desired date on the calendar</li>
+				<li>A window should pop-up asking you to enter Event Content </li>
+				<li>Enter the appointment details and click “OK” to save</li>
+			</ul>
+		</div>
+		<div class="two-column">
+			<h1>To add in recurring appointments that occurs across several days:</h1>
+			<ul>
+				<li>Click on the start date and hold the left-click button</li>
+				<li>While holding the button, drag the cursor across the calendar to the end date </li>
+				<li>Once you reach the end date, release the left-click button and a window should pop-up asking you to enter Event Content</li>
+				<li>Enter the appointment details and click “OK” to save</li>
+			</ul>
+		</div>
+	</div>	
+	<div style="clear: both;"><br></div>
+	<div id="calendar"><br>
+		<button class="printBtn hidden-print">Print</button>
+	</div>
+<!-- partial -->
+	<script src="moment.min.js"></script>
+	<script src="jquery.min.js"></script>
+	<script src="jquery.ui.min.js"></script>
+	<script src="fullcalendar.min.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript">
+	  $('.printBtn').on('click', function (){
+		window.print();
+	  });
+	</script>
+
+</body>
+</html>

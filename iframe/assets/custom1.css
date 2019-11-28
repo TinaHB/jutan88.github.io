@@ -1,0 +1,80 @@
+p, a, h1, button {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+h1{
+	font-size: 40px;
+	font-weight: 400;
+	color: #ED258B;
+	text-align: center;
+}
+p{
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+
+.one-thirds{
+	background-color: aqua;
+}
+#sketchpad {
+    border: 1px solid #eee;
+    cursor: crosshair;
+	background-image: url("../../Imgs/Graphics_Stage3A.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-print-color-adjust: exact;
+}
+
+.hidden-print{
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition: 0.3s;
+	font-size: 13px;
+	color: white;
+	text-transform: uppercase;
+	background-color: #ED258B;
+	border-radius: 30px;
+}
+section {
+    padding: 2rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+#legend{
+	float: left;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+#legend img{
+	margin: auto;
+	width: 30px;
+	margin-right: 5px;
+	float: left;
+}
+#legend p {
+	margin-top: 5px;
+	font-size: 15px;
+	float: left;
+}
+
+@media (min-width: 550px) {
+    section:first-child {
+        margin-top: 8rem;
+    }
+}
+@media print {
+  .visible-print  { display: inherit !important; }
+  .hidden-print   { display: none !important; }
+}
+input {
+font-family: 'Lato', sans-serif;
+	font-weight: 600;
+}

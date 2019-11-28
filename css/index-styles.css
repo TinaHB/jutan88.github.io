@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+p, a, h1, button {
+	font-family: 'Lato', sans-serif;
+}
+a{
+	color: black;
+}
+.hero-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	z-index: -2;
+}
+/*Top Navigation*/
+
+.logo{
+	padding: 10px;
+	width: 150px;
+}
+#topNav{
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	font-size: 14px;
+	width: 100%;
+	background-color: white;
+  	box-shadow: 0px 10px 10px #E8E8E8;
+}
+.nav-links{
+	display: flex;
+	justify-content: center;
+	width: 700px;
+	text-decoration: none;
+	text-align: center;
+}
+.nav-links a {
+	text-decoration: none;
+	font-weight: bold;
+}
+.nav-links li{
+	list-style: none;
+}
+
+.page1-btn{
+	color: black;
+	padding: 17px;
+	float: left;
+}
+.page2-btn{
+	padding: 17px;
+	color: black;
+	float: left;
+}
+.page3-btn{
+	color: black;
+	padding: 17px;
+	float: left;
+}
+.page4-btn{
+	color: black;
+	padding: 17px;
+	float: left;
+}
+.page1-btn:hover{
+	background-color:#EAD300;
+	color: white;
+	transition: .2s;
+}
+
+.page2-btn:hover{
+	background-color: #1C3DB3;
+	color: white;
+	transition: .2s;
+}
+
+.page3-btn:hover{
+	background-color: #592B81;
+	color: white;
+	transition: .2s;
+}
+.page4-btn:hover{
+	background-color: #ED1D31;
+	color: white;
+	transition: .2s;
+}
+
+#color-bar1{
+	height: 5px;
+	background-color: #ccc;
+}
+
+/*main-container*/
+
+#main-container{
+	position: relative;
+	margin: auto;
+	width: 100%;
+	min-height: 70vh;
+}
+#content-wrap{
+	padding-bottom: 2.5rem;
+}
+.title{
+	text-transform: uppercase;
+	font-size: 30px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+.sub-title {
+	font-weight: 600;
+	padding-top: 10px;
+	font-size: 18px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+.map{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 60%;
+	padding-top: 20px;
+}
+
+/*footer*/
+
+#footer{
+	width: 100%;
+	background-color: #464646;
+	padding: 30px;
+	position: relative;
+	margin-top: 50px;
+	bottom: 0px;
+}
+.footnotes{
+	color: white;
+	font-size: 12px;
+	font-weight: 100;
+}
+.footerlogo{
+	padding-top: 40px;
+	width: 20%;
+}
+.footertagline{
+	width: 50%;
+	padding-top: 20px;
+}
+
+@media screen and (max-width:768px){
+	.title{
+		font-size: 25px;
+	}
+	.sub-title {
+		font-size: 14px;
+	}
+	
+}
