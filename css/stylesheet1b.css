@@ -190,10 +190,8 @@ p{
 	display: flex;
 }
 #main-content{
-	background-color: #ED258B;
 	margin: auto;
 	width: 100%;
-	overflow-x: hidden;
 }
 .tablink {
 	background-color: #ED258B;
