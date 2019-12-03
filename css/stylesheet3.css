@@ -25,6 +25,12 @@ p{
 	font-size: 1.5em;
 	line-height: 1.5;
 }
+li{
+	color: white; 
+	list-style: disc; 
+	display: list-item; 
+	margin-left: 22px;
+}
 /* Navigation******************************************************************************************/
 
 #full-nav{

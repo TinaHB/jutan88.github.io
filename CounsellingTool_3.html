@@ -4,14 +4,12 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Treatment Plan</title>
+	<title>Counselling Tool - Immunotherapy Treatment Continuation</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/stylesheet3.css" type="text/css">
-	<link rel="stylesheet" href="css/lightslider.css" type="text/css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
+	<!---<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">--->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!---<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--->
 	
 </head>
 <body>
@@ -69,7 +67,7 @@
 					<button class="accordion">Staying on track with your medical appointments</button>
 					<div class="panel">
 						<p style="color: white;" class="tiny-text">
-							<ul style="color: white; list-style: disc outside none; display: list-item; margin-left: 1em;">
+							<ul>
 								<li>Use a <a target="_blank" href="Calendar/calendar.html" style="text-decoration: underline;">calendar</a> to record treatment sessions or other medical appointments</li>
 								<li>Add family, community, and work-related events to your <a target="_blank" href="Calendar/calendar.html" style="text-decoration: underline;">calendar</a></li>
 								<li>Plan your appointments for the time of the week that works best for you</li>
@@ -80,7 +78,7 @@
 					<button class="accordion">Managing treatment schedules with the demands of work and home</button>
 					<div class="panel">
 						<p style="color: white;" class="tiny-text">
-							<ul style="color: white; list-style: disc outside none; display: list-item; margin-left: 1em;">
+							<ul>
 								<li>Tell your family, friends, and co-workers what your treatment schedule will be, and ask for help when you need it</li>
 								<li>Hire help at home if at all possible </li>
 								<li>Ask your boss if you can arrange your schedule so you can work more on non-treatment days and take time off for treatment and recovery</li>
@@ -91,7 +89,7 @@
 					<button class="accordion">Taking care of your emotional wellbeing</button>
 					<div class="panel">
 						<p style="color: white;" class="tiny-text">
-							<ul style="color: white; list-style: disc outside none; display: list-item; margin-left: 1em;">
+							<ul>
 								<li>Think about lung cancer as a chronic disease like diabetes or high blood pressure</li>
 								<li>If you have questions about your treatment, ask your doctor or nurse</li>
 								<li>Ask for help with any emotional distress or depression </li>
@@ -147,8 +145,6 @@
 		<img class="footertagline" src="Imgs/Graphics_Tagline.png" alt="logotagline">
 	</div>
 	<script type="application/javascript" src="js/app.js"></script>
-	<script type="application/javascript" src="js/sliderscalething.js"></script>
-	<script type="application/javascript" src="js/lightslider.min.js"></script>
 	<script>
 		function openPage(pageName,elmnt,color) {
 		  var i, tabcontent, tablinks;
@@ -168,77 +164,12 @@
 		document.getElementById("defaultOpen").click();
 	</script>
 	<script>
-	
-    	 $(document).ready(function() {
-			$("#content-slider").lightSlider({
-                loop:false,
-                keyPress:true,
-            });
-            $('#image-gallery').lightSlider({
-                gallery:true,
-                item:1,
-                thumbItem:7,
-                slideMargin: 0,
-                speed:500,
-                auto:false,
-                loop:false,
-                onSliderLoad: function() {
-                    $('#image-gallery').removeClass('cS-hidden');
-                }  
-            });
-		});
-    </script>
-	<script>
-		var s = document.createElement("style");
-			document.head.appendChild(s);
-			slider1.addEventListener("input", () => {
-			s.textContent = `#slider1::-webkit-slider-thumb{background: hsl(${slider1.value}, 100%, 43%)}`
-		});
-		var k = document.createElement("style");
-			document.head.appendChild(k);
-			slider2.addEventListener("input", () => {
-			k.textContent = `#slider2::-webkit-slider-thumb{background: hsl(${slider2.value}, 100%, 43%)}`
-		});
-		var y = document.createElement("style");
-			document.head.appendChild(y);
-			slider3.addEventListener("input", () => {
-			y.textContent = `#slider3::-webkit-slider-thumb{background: hsl(${slider3.value}, 100%, 43%)}`
-		});
-		var u = document.createElement("style");
-			document.head.appendChild(u);
-			slider4.addEventListener("input", () => {
-			u.textContent = `#slider4::-webkit-slider-thumb{background: hsl(${slider4.value}, 100%, 43%)}`
-		});
-		
-		var j = document.createElement("style");
-			document.head.appendChild(j);
-			slider5.addEventListener("input", () => {
-			j.textContent = `#slider5::-webkit-slider-thumb{background: hsl(${slider5.value}, 100%, 43%)}`
-		});
-		var o = document.createElement("style");
-			document.head.appendChild(o);
-			slider6.addEventListener("input", () => {
-			o.textContent = `#slider6::-webkit-slider-thumb{background: hsl(${slider6.value}, 100%, 43%)}`
-		});
-		var w = document.createElement("style");
-			document.head.appendChild(w);
-			slider7.addEventListener("input", () => {
-			w.textContent = `#slider7::-webkit-slider-thumb{background: hsl(${slider7.value}, 100%, 43%)}`
-		});
-		var z = document.createElement("style");
-			document.head.appendChild(z);
-			slider8.addEventListener("input", () => {
-			z.textContent = `#slider8::-webkit-slider-thumb{background: hsl(${slider8.value}, 100%, 43%)}`
-		});
-			
-	</script>
-	<script>
-	function scrolling(){
-		window.scrollTo({
-		top: '540',
-		behavior: "smooth",
-		});
-    }
+		function scrolling(){
+			window.scrollTo({
+			top: '540',
+			behavior: "smooth",
+			});
+		}
 	</script>
 </body>
 </html>
