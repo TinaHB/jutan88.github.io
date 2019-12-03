@@ -33,6 +33,7 @@ p{
 	width: 100%;
 	background-color: white;
 	top: 0px;
+	overflow-x: hidden;
 }
 .logo{
 	padding:15px 15px 15px 30px;
@@ -147,6 +148,7 @@ p{
 	background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+	overflow-x: hidden;
 }
 
 .introContent{
@@ -186,7 +188,7 @@ p{
 	top: 123px;
 	margin-top: 45px;
 	justify-content: center;
-	overflow: hidden;
+	overflow-x: hidden;
 	display: flex;
 }
 #main-content{
@@ -567,6 +569,7 @@ th {
 	bottom: 0px;
 	height: auto;
 	float: none;
+	overflow-x: hidden;
 }
 .footnotes{
 	color: white;
