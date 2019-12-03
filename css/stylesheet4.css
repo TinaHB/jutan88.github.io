@@ -583,6 +583,7 @@ th {
 	bottom: 0px;
 	height: auto;
 	float: none;
+	overflow-x: hidden;
 }
 .footnotes{
 	color: white;
