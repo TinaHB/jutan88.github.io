@@ -26,7 +26,9 @@ p{
 	line-height: 1.5;
 }
 li{
-	color: white; 
+	color: black; 
+	font-size: 18px;
+	line-height: 1.5;
 	list-style: disc; 
 	display: list-item; 
 	margin-left: 22px;
@@ -279,8 +281,9 @@ li{
 }
 
 .tiny-text{
-	font-size: 17px;
+	font-size: 20px;
 	padding-top: 10px;
+	color: black !important;
 }
 .text-column{
 	width: 75%;
@@ -331,6 +334,12 @@ th {
 }
 .fifth-column img{
 	width: 100%;
+}
+.print-section{
+	width: 100%;
+	padding: 50px 0px 50px 0px;
+	background-color: #FFFFFF;
+	display: flex;
 }
 #division-column1{
 	margin-top: 50px;
@@ -391,17 +400,19 @@ th {
 	padding: 50px 0px 50px 0px;
 	display: flex;
 }
+
 .download-text{
-	width: 80%;
+	width: 50%;
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	text-align: center;
 	background-color: #D0D0D0;
 	border-radius: 30px;
 	padding: 10px;
 	border: none;
+	font-size: 18px;
 }
+
 .download-text:hover{
 	background-color: #A0A0A0;
 }
