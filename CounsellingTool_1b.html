@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Treatment Plan</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/stylesheet1b.css" type="text/css">
+	<link rel="stylesheet" href="css/lightslider.css" type="text/css">
+	<link rel="stylesheet" href="css/colorbox.css" type="text/css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/jquery.colorbox.js" type="text/javascript"></script>
+	<script src="js/iframe-colorbox.js" type="text/javascript"></script>
+	
+</head>
+<body>
+	<div id="full-nav">
+		<div id="topNav">
+			<div>
+				<a href="index.html"><img class="logo" src="Imgs/logo-01.png" alt="logo"></a>
+			</div>
+			<div class="nav-links">
+				<button onClick="window.location.href='TreatmentPathway.html'" class="page1-btn">Treatment Pathway</button>
+				<button onClick="window.location.href='#'" class="page2-btn">Counselling Tool</button>
+				<button onClick="window.location.href='Resources.html'" class="page3-btn">Resources</button>
+			</div>
+		</div>
+		<div class="tab">
+			<button onClick="window.location.href='#'" class="tablinks1">Treatment Plan: Chemoradiation + Immunotherapy</button>
+			<button onClick="window.location.href='CounsellingTool_2.html'" class="tablinks2"><a href="#">Immunotherapy Treatment Initiation</a></button>
+			<button onClick="window.location.href='CounsellingTool_3.html'" class="tablinks3"><a href="#">Immunotherapy Treatment Continuation</a></button>
+		</div>
+	</div>
+	<div id="banner">
+		<div class="introContent">
+			<img src="Imgs/Graphics_PinkCube.png" alt="pinkcube" id="cubeimage">
+			<p class="introTitle"><span style="font-size: 28px; font-weight: 600; text-transform: uppercase; color:#ED0C7E;">Treatment Plan:</span> <br>Chemoradiation + Immunotherapy<br></p>
+		</div>
+		<div style="clear: both;"></div>
+		<p class="introCopy"><br>You have a diagnosis of <strong>stage III non-small cell lung cancer (NSCLC).</strong> This means that the cancer has grown within your lung and spread into the nearby lymph nodes, or adjacent structures. However, the cancer is limited to the chest and there is no evidence that it has metastasized or spread to distant areas of your body.</p>
+	</div>
+	<div id="SectionNav">
+		<button class="tablink" onclick="openPage('Intro', this, '#C6267E');scrolling();" id="defaultOpen">Introduction</button>
+		<button class="tablink" onclick="openPage('TreatmentJourney', this, '#C6267E');scrolling();" >Treatment Journey</button>
+		<button class="tablink" onclick="openPage('Part1', this, '#C6267E');scrolling();">Part 1: Chemoradiation</button>
+		<button class="tablink" onclick="openPage('Part2', this, '#C6267E');scrolling();">Part 2: Immunotherapy</button>
+		<button class="tablink" onclick="openPage('Survey', this, '#C6267E');scrolling();">Chemoradiation Survey</button>
+	</div>
+	<div id="main-content">
+		<div id="Intro" class="tabcontent" style="padding-top: 80px;">
+			<h1>What is my cancer staging?<sup style="font-size: 20px;">1</sup></h1>
+			<div class="full-column">
+				<p style="text-align: center;"><br>
+			    Stage III lung cancer is divided into three stages: stage IIIA, stage IIIB, and stage IIIC.<br>(Click to Expand)</p>
+			</div>
+			<div class="full-column">
+				<div class="third-column">
+					<a class="iframe" href="iframe/index1.html"><img src="Imgs/Graphics_Stage3A.png" alt="stage3a"></a>
+				</div>
+				<div class="third-column">
+					<a class="iframe" href="iframe/index2.html"><img src="Imgs/Graphics_Stage3B.png" alt="stage3a"></a>
+				</div>
+				<div class="third-column">
+					<a class="iframe" href="iframe/index3.html"><img src="Imgs/Graphics_Stage3C.png" alt="stage3a"></a>
+				</div>
+			</div>
+			<!---<div class="full-column" id="legend">
+				<img src="Imgs/Graphics_Legend-1.png" alt="legend1"><p>Tumours</p>
+				<img src="Imgs/Graphics_Legend-2.png" alt="legend2"><p>Non- metastatic lymph nodes</p>
+				<img src="Imgs/Graphics_Legend-3.png" alt="legend3"><p>Metastatic lymph nodes</p>
+			</div>
+			<div class="full-column">
+				<div class="third-column">
+					<button class="accordion">Stage IIIA</button>
+					<div class="panel">
+						<p class="tiny-text">Tumour of any size has spread to nearby lymph nodes, and may have invaded nearby tissues or organs. <br><br>In certain cases, the tumour might be bigger than 5 cm, but its spread to surrounding lymph nodes is non-existent or limited.<br><br><br></p>
+					</div>
+				</div>
+				<div class="third-column">
+					<button class="accordion">Stage IIIB</button>
+					<div class="panel">
+						<p class="tiny-text">Tumour of any size has spread to the chest wall, near the heart, diaphragm or other nearby organs, and has spread to nearby lymph nodes OR Tumour smaller than 5 cm has spread to distant lymph nodes AND<br><br>• Is in the main air passage OR<br>• Invades the lung’s surface<br><br>There may be one or more other tumours in the same lung.<br><br><br></p>
+					</div>
+				</div>
+				<div class="third-column">
+					<button class="accordion">Stage IIIC</button>
+					<div class="panel">
+						<p class="tiny-text">Tumour has spread to distant lymph nodes AND<br><br>• 5 – 7 cm OR<br>• Larger than 7 cm or spreads to the diaphragm or other nearby organs OR<br>• Has spread to the chest wall or near the heart<br><br><br></p>
+					</div>
+				</div>
+			</div> --->
+		  <div id="division-column8">
+				<div class="full-column">
+					<h1>Stage Group Calculator</h1>
+					<p style="text-align: center;"><br>Select Primary Tumour (T), Regional Lymph Nodes (N), and Distant Metastasis (M):<br>
+					</p>
+					<div style="padding-bottom: 30px;" class="full-column">
+						<a class="iframe" target="_blank" href="pdf/IASLC 8th Edition_TNM Definitions.pdf">
+							<p class="download-text">Click here for T/N/M definitions</p>
+						</a>
+					</div>
+					<div style="clear: both;"></div>
+						<select class="selectstage" id="select1"> 
+							<option selected value="TX">TX</option> 
+							<option value="Tis">Tis - Carcinoma in situ</option> 
+							<option value="T1mi">T1mi</option> 
+						    <option value="T1a">T1a</option> 
+							<option value="T1b">T1b</option> 
+							<option value="T1c">T1c</option> 
+						    <option value="T2a">T2a</option> 
+							<option value="T2b">T2b</option> 
+							<option value="T3">T3</option> 
+							<option value="T4">T4</option> 
+						</select> 
+						<select class="selectstage" id="select2" > 
+							<option selected> Primary Tumour (N)</option> 
+							<option value="N0">N0 - No regional lymph node metastasis</option> 
+							<option value="N1">N1 - Metastasis in ipsilateral peribronchial and/or ipsilateral hilar lymph nodes and intrapulmonary nodes, including involvement by direct extension</option> 
+							<option value="N2">N2 - Metastasis in ipsilateral mediastinal and/or subcarinal lymph node(s)</option> 
+							<option value="N3">N3 - Metastasis in contralateral mediastinal, contralateral hilar, ipsilateral or contralateral scalene or supraclavicular lymph node(s)</option>
+						</select> 
+						<select class="selectstage" id="select3" > 
+							<option selected value="M0">M0</option> 
+							<option value="M1a">M1a</option> 
+							<option value="M1b">M1b</option> 
+						    <option value="M1c">M1c</option> 
+						</select> 
+					<div class="full-column" style="width: 30%;">
+						<button class="calculate-btn" onclick="getOption()">Submit</button>
+					</div>
+					<p style="text-align: center;">Stage: <span class="output"></span> 
+					</p> 
+				</div> 
+			</div>	
+			<div id="division-column1">
+				<div class="full-column">
+					<h1>How is Stage III Lung Cancer Treated?</h1>
+				  <p style="text-align: center;"><br>Treatment selection depends on characteristics of the lung cancer including the tumour size, location and whether it has spread. Treatment selection can also be influenced by patient factors such as your health status and medical history, age, past treatments and other health conditions that you may have.<br><br> </p>
+					<div class="one-column">
+						<img src="Imgs/Graphics_Surgery-34.png" alt="surgery">
+						<button  class="accordion">Surgery</button>
+						<div class="panel">
+							<p class="tiny-text">Surgery involves the removal of a tumour and some healthy tissue around the tumour. Surgery is only an option if the cancer is found early, if the tumour has not spread within the chest or to other organs and if the tumour can be removed completely.</p>
+						</div>
+					</div>
+					<div class="one-column">
+						<img src="Imgs/Graphics_Radiation-35.png" alt="radiation">
+						<button class="accordion">Radiation</button>
+						<div class="panel">
+							<p class="tiny-text">Radiation works by directing a high energy x-ray beam at the tumour and nearby lymph nodes to interfere with dividing tumour cells by either killing them or stopping the cells from growing and reproducing.</p>
+						</div>
+					</div>
+					<div class="one-column">
+						<img src="Imgs/Graphics_chemotherapy.png" alt="surgery">
+						<button  class="accordion">Chemotherapy</button>
+						<div class="panel">
+							<p class="tiny-text">Chemotherapy does not target specific molecules on or inside cancer cells but uses drugs to destroy cancer cells or slow their growth. This treatment is given through an infusion into the bloodstream in order to reach cancer cells all over the body.</p>
+						</div>
+					</div>
+					<div class="one-column">
+						<img src="Imgs/Graphics_immunotherapy.png" alt="radiation">
+						<button class="accordion">Immunotherapy</button>
+						<div class="panel">
+							<p class="tiny-text">Immunotherapy is a new type of treatment that works by helping your immune system fight the cancer. Immunotherapy can help slow or prevent the cancer from growing and can also shrink the tumour. Immunotherapy works differently from chemotherapy and radiation therapy. Instead of killing cancer cells directly, immunotherapy helps the body’s own natural defense system (the immune system) become better at detecting and destroying cancer cells.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="division-column2">
+				<div class="drugtherapy">
+					<h1 style="color: white; font-size: 36px;">Drug Therapy</h1>
+					<p style="color: white; text-align: center;"><br>Drug therapy for stage III lung cancer include chemotherapy and immunotherapy.<br></p>
+						<ul id="image-gallery">
+							<li data-thumb="Imgs/Slide_1.png"> 
+								<img src="Imgs/Slide_1.png" alt="slide1" />
+								<p class="slideCaption">How do chemotherapy and immunotherapy work?</p>
+							</li>
+							<li data-thumb="Imgs/Slide_2.png"> 
+								<img src="Imgs/Slide_2.png" alt="slide2" />
+								<p class="slideCaption">Chemotherapy is very different from immunotherapy. Both given by infusion through the vein. However they work in their own way.</p>
+							</li>
+							<li data-thumb="Imgs/Slide_3.png"> 
+								<img src="Imgs/Slide_3.png" alt="slide3" />
+								<p class="slideCaption">Chemotherapy uses drugs to kill cancer cells or slow their growth.</p>							
+							</li>
+						</ul>
+					<!---<div style="clear: both;"><br></div>
+					<div class="two-column" style="padding-left: 0px; padding-right: 10px;">
+						<button class="accordion">Chemotherapy</button>
+						<div class="panel">
+							<p class="tiny-text" style="color: white;">Chemotherapy does not target specific molecules on or inside cancer cells but uses drugs to destroy cancer cells or slow their growth. This treatment is given through an infusion into the bloodstream in order to reach cancer cells all over the body.</p>
+						</div>
+					</div>
+					<div class="two-column" style="padding-left: 10px; padding-right: 0px;">
+						<button class="accordion">Immunotherapy</button>
+						<div class="panel">
+							<p class="tiny-text" style="color: white;">Immunotherapy is a new type of treatment that works by helping your immune system fight the cancer. Immunotherapy can help slow or prevent the cancer from growing and can also shrink the tumour. Immunotherapy works differently from chemotherapy and radiation therapy. Instead of killing cancer cells directly, immunotherapy helps the body’s own natural defense system (the immune system) become better at detecting and destroying cancer cells.</p>
+						</div>
+					</div>--->
+				</div>
+			</div>
+			<div class="print-section">
+				<div class="full-column">
+					<a target="_blank" href="#">
+						<p class="download-text"><strong>Print Section</strong></p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="TreatmentJourney" class="tabcontent">
+			<div id="division-column3">
+				<div class="full-column" style="color: white;">
+					<h1 style="color: white;">Can I have surgery to remove the tumour?</h1>
+					<p style="text-align: center;"><br>Your healthcare team has determined that due to the location of the tumour or lymph nodes involved, surgery is not a good option for treating your cancer.<br><br></p>
+				</div>
+			</div>
+			<div class="full-column" style="margin-top: 50px;">
+				<h1>What does my treatment journey look like?</h1>
+				<p style="text-align: center;" ><br>
+				  The most effective treatment option for stage III lung cancer is chemotherapy + radiation which is given together (chemoradiation) followed by immunotherapy. This treatment is given in 2 parts:<br><br><br>
+			  </p>
+			</div>
+			<div class="full-column" style="padding-bottom: 50px; width: 50%;">
+				<img src="Imgs/Graphics_Journeymap.png" alt="Visual 6">
+			</div>
+			<div class="print-section">
+				<div class="full-column">
+					<a target="_blank" href="#">
+						<p class="download-text"><strong>Print Section</strong></p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="Part1" class="tabcontent">
+			<div class="full-column">
+				<h1 style="margin-top: 50px;"><br>Part 1: Chemoradiation</h1>
+				<p style="text-align: center;"><br>Chemoradiation is given over 6-7 weeks. This involves radiation given 5 days a week for 5 to 7 weeks. Chemotherapy will be given at the same time with the schedule to be determined by your oncologist.<br><br></p>
+			</div>
+			<div class="full-column">
+				<div class="text-column" style="padding-bottom: 100px;">
+					<img src="Imgs/Graphics_CalendarScreenshot.jpg" alt="calendar">
+				</div>
+				<div class="one-column">
+					<a target="_blank" href="Calendar/calendar.html"><img src="Imgs/Graphics-43.png" id="calendar-btn" alt="calendar"><p style="padding-top: 20px; text-align: left; font-size: 20px;">Launch Calendar</p></a>
+				</div>
+			</div>
+			<div id="division-column4">
+				<div class="full-column">
+					<div class="center-icon">
+						<img src="Imgs/Graphics_icon-sideeffects.png" alt="goal">
+					</div>
+					<div style="clear: both;"></div>
+					<h1>What are the side effects of chemoradiation?</h1>
+					<p style="text-align: center; "><br>Please refer to the information provided by your healthcare team on the side effects of chemotherapy plus radiation.<br><br></p>
+				</div>
+			</div>
+			<div class="print-section">
+				<div class="full-column">
+					<a target="_blank" href="#">
+						<p class="download-text"><strong>Print Section</strong></p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="Part2" class="tabcontent">
+		   <div class="full-column">
+				<h1 style="margin-top: 50px;"><br>Part 2: Immunotherapy with Durvalumab</h1>
+				<p style="text-align: center; "><br>Most patients who complete chemoradiation will receive immunotherapy. You will have a CT scan or be assessed by your healthcare team to make the final decision. The chemoradiation that you received in Part 1 of treatment makes the tumour cells even more susceptible to the immunotherapy. Durvalumab is an immunotherapy that is approved for stage III lung cancer and is given every 2 weeks for 1 year.<br><br><br><br></p>
+			</div>
+			<!---<div id="division-column4">
+				<div class="full-column">
+					<div class="two-column">
+						<div class="center-icon">
+							<img src="Imgs/Graphics_icon-goal.png" alt="goal">
+						</div>
+						<div style="clear: both;"></div>
+						<h1>What are the goals of treatment?</h1>
+						<p style="text-align: center; "><br>The goal of treatment is to cure the cancer. For some patients treatment with chemoradiation and immunotherapy will lead to a cure. For others, this is the best way to control the cancer and prevent it from affecting them for as long as possible. Your doctor or healthcare team will provide information specific to you. <br><br></p>
+					</div>
+					<div class="two-column">
+						<div class="center-icon">
+							<img src="Imgs/Graphics_icon-sideeffects.png" alt="goal">
+						</div>
+						<div style="clear: both;"></div>
+						<h1>What are the side effects of chemoradiation?</h1>
+						<p style="text-align: center; "><br>Please refer to the information provided by your healthcare team on the side effects of chemotherapy plus radiation.<br><br></p>
+					</div>
+				</div>
+			</div>--->
+			<div id="division-column5">
+				<div class="full-column">
+					<div class="center-icon">
+						<img src="Imgs/Graphics_icon-handshake.png" alt="goal">
+					</div>
+					<div style="clear: both;"></div>
+					<h1 style="color: white;"><br>Commitment to the lung cancer treatment journey</h1>
+					<p style="text-align: center; color: white; "><br>
+					Treatment with chemoradiation and immunotherapy with durvalumab offers the best chance for a cure, and committing to the full 2-part treatment program will increase the chance of achieving that goal. <br>
+					</p>
+				</div>
+			</div>
+			<div class="print-section">
+				<div class="full-column">
+					<a target="_blank" href="#">
+						<p class="download-text"><strong>Print Section</strong></p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="Survey" class="tabcontent">
+		  <div class="full-column">
+					<h1 style="text-align: left; margin-top: 50px;"><br>Chemoradiation: considering the benefits and risks</h1>
+					<p><br>Consider the statements below about the benefits of chemoradiation and indicate how important each is to you.<br><br></p>
+					<div class="sliderScaleThing">
+						<div class="slider-row">
+							<div class="spacer">
+								<p class="indicator-right">Extremely Important</p>
+								<p class="indicator-left">Not Important</p>
+							</div>
+						</div>
+						<div class="slider-row">
+							<p class="range-text">I may live longer<span id="range-one"></span></p>
+							<input type="range" id="slider1" min="0" max="99.99"  value="50" class="slider" onchange="showValue(this.value, 'range-one')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">My symptoms of cancer may improve<span id="range-two"></span></p>
+							<input type="range" id="slider2" min="0" max="99.99" value="50"  class="slider" onchange="showValue(this.value, 'range-two')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">I feel like I am actively fighting the cancer<span id="range-three"></span></p>
+							<input type="range" id="slider3" min="0"max="99.99" value="50" class="slider" onchange="showValue(this.value, 'range-three')">
+						</div>
+						<div class="slider-row" style="padding-bottom: 30px;">
+							<p class="range-text">Other (list here): &nbsp;<input class="otherRange" type="text"><span id="range-four"></span></p>
+							<input type="range" id="slider4" min="0" max="99.99"  value="50" class="slider" onchange="showValue(this.value, 'range-four')">
+						</div>
+					</div>
+					<p>Consider the following statements and indicate how concerned you are about treatment with chemoradiation.<br><br></p>
+					<div class="sliderScaleThing">
+						<div class="slider-row">
+							<div class="spacer">
+								<p class="indicator-right">Not Concerned</p>
+								<p class="indicator-left">Very Concerned</p>
+							</div>
+						</div>
+						<div class="slider-row">
+							<p class="range-text">There is a potential for side effects<span id="range-five"></span></p>
+							<input type="range" id="slider5" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-five')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">I will have to make regular trips to the hospital/cancer centre<span id="range-six"></span></p>
+							<input type="range" id="slider6" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-six')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">There is no guarantee the treatment will work<span id="range-seven"></span></p>
+							<input type="range" id="slider7" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-seven')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">Other (list here): &nbsp;<input class="otherRange" type="text"><span id="range-eight"></span></p>
+							<input type="range" id="slider8" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-eight')">
+						</div>
+					</div>
+					<p id="avg"></p>
+					<div class="rrIndicator">
+						<button id="rri-btn" onclick="f_color()"> RECOMMENDED NEXT STEPS </button>
+						<div id="myBar"><p id= "demo"></p></div>
+					</div>
+				</div>
+				<div id="division-column6">
+					<div class="full-column">
+						<h1 style="text-align: left; color: white;">Final Questions</h1>
+						<p>
+							<br><strong>1.</strong> Do you understand the benefits of the chemoradiation?
+							<br><strong>2.</strong> Do you have any questions for your healthcare team about risks and side-effects of chemoradiation?
+							<br><strong>3.</strong> Is there anything else that you would like to know?
+							<br><strong>4.</strong> Have all you questions been answered, and all your concerns addressed?
+							<br><strong>5.</strong> Can I introduce you to the rest of the team to help you schedule your treatment?<br>
+						</p>
+					</div>
+				</div>
+			<div id="division-column7">
+				<div class="full-column">
+					<div class="center-icon">
+						<a target="_blank" href="pdf/Clinical Practicalities of Chemoradiation.pdf">
+							<img src="Imgs/Graphics_icon-download.png" alt="download">
+						</a>
+					</div>
+					<div style="clear: both;"></div>
+					<a target="_blank" href="pdf/Clinical Practicalities of Chemoradiation.pdf">
+						<p class="download-text"><strong>DOWNLOAD: </strong>Clinical Practicalities of Chemoradiation<br></p>
+					</a>
+				</div>
+			</div>
+			<div class="print-section">
+				<div class="full-column">
+					<a target="_blank" href="#">
+						<p class="download-text"><strong>Print Section</strong></p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="clear: both;"></div>
+	<div id="footer">
+		<p class="footnotes">This website was developed by a scientific planning committee of Canadian lung cancer experts including medical oncologists, radiation oncologists, an oncology pharmacist and an oncology nurse, for educational purposes and should be used with patients to help them make the most informed treatment decision.<br><br>Reference 1: Rami-Porta R, Asamura H, Travis WD, Rusch VW. Lung Cancer — Major Changes in the American Joint Committee on Cancer Eighth Edition Cancer Staging Manual. CA Cancer J Clin. 2017.</p>
+		
+		<img class="footerlogo" src="Imgs/Banners-02.png" alt="logo">
+		<div style="clear: both;"></div>
+		<img class="footertagline" src="Imgs/Graphics_Tagline.png" alt="logotagline">
+	</div>
+	<script type="application/javascript" src="js/app.js"></script>
+	<script type="application/javascript" src="js/sliderscalething.js"></script>
+	<script type="application/javascript" src="js/lightslider.min.js"></script>
+	<script type="application/javascript" src="js/calculator.js"></script>
+	<script>
+		function openPage(pageName,elmnt,color) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		  }
+		  tablinks = document.getElementsByClassName("tablink");
+		  for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].style.backgroundColor = "";
+		  }
+		  document.getElementById(pageName).style.display = "block";
+		  elmnt.style.backgroundColor = color;
+		}
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+	<script>
+	
+    	 $(document).ready(function() {
+			$("#content-slider").lightSlider({
+                loop:false,
+                keyPress:true,
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:6,
+                slideMargin: 0,
+                speed:500,
+                auto:false,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+		});
+    </script>
+	<script>
+		var s = document.createElement("style");
+			document.head.appendChild(s);
+			slider1.addEventListener("input", () => {
+			s.textContent = `#slider1::-webkit-slider-thumb{background: hsl(${slider1.value}, 100%, 43%)}`
+		});
+		var k = document.createElement("style");
+			document.head.appendChild(k);
+			slider2.addEventListener("input", () => {
+			k.textContent = `#slider2::-webkit-slider-thumb{background: hsl(${slider2.value}, 100%, 43%)}`
+		});
+		var y = document.createElement("style");
+			document.head.appendChild(y);
+			slider3.addEventListener("input", () => {
+			y.textContent = `#slider3::-webkit-slider-thumb{background: hsl(${slider3.value}, 100%, 43%)}`
+		});
+		var u = document.createElement("style");
+			document.head.appendChild(u);
+			slider4.addEventListener("input", () => {
+			u.textContent = `#slider4::-webkit-slider-thumb{background: hsl(${slider4.value}, 100%, 43%)}`
+		});
+		
+		var j = document.createElement("style");
+			document.head.appendChild(j);
+			slider5.addEventListener("input", () => {
+			j.textContent = `#slider5::-webkit-slider-thumb{background: hsl(${slider5.value}, 100%, 43%)}`
+		});
+		var o = document.createElement("style");
+			document.head.appendChild(o);
+			slider6.addEventListener("input", () => {
+			o.textContent = `#slider6::-webkit-slider-thumb{background: hsl(${slider6.value}, 100%, 43%)}`
+		});
+		var w = document.createElement("style");
+			document.head.appendChild(w);
+			slider7.addEventListener("input", () => {
+			w.textContent = `#slider7::-webkit-slider-thumb{background: hsl(${slider7.value}, 100%, 43%)}`
+		});
+		var z = document.createElement("style");
+			document.head.appendChild(z);
+			slider8.addEventListener("input", () => {
+			z.textContent = `#slider8::-webkit-slider-thumb{background: hsl(${slider8.value}, 100%, 43%)}`
+		});
+			
+	</script>
+	<script>
+	function scrolling(){
+		window.scrollTo({
+		top: '540',
+		behavior: "smooth",
+		});
+    }
+	</script>
+
+	
+</body>
+</html>
