@@ -45,7 +45,7 @@
 	</div>
 	<div id="SectionNav">
 		<button class="tablink" onclick="openPage('Intro', this, '#C6267E');scrolling();" id="defaultOpen">Introduction</button>
-		<button class="tablink" onclick="openPage('TreatmentJourney', this, '#C6267E');scrolling();" >Treatment Journey</button>
+		<button id="tablink2" class="tablink" onclick="openPage('TreatmentJourney', this, '#C6267E');scrolling();" >Treatment Journey</button>
 		<button class="tablink" onclick="openPage('Part1', this, '#C6267E');scrolling();">Part 1: Chemoradiation</button>
 		<button class="tablink" onclick="openPage('Part2', this, '#C6267E');scrolling();">Part 2: Immunotherapy</button>
 		<!---<button class="tablink" onclick="openPage('Survey', this, '#C6267E');scrolling();">Chemoradiation Survey</button>--->
@@ -446,6 +446,9 @@
 	<script type="application/javascript" src="js/lightslider.min.js"></script>
 	<script type="application/javascript" src="js/calculator.js"></script>
 	<script>
+		jQuery('#tablink2').click(function(){ $('#division-column2').resize(); });
+	</script>
+	<script>
 		function openPage(pageName,elmnt,color) {
 		  var i, tabcontent, tablinks;
 		  tabcontent = document.getElementsByClassName("tabcontent");
@@ -476,7 +479,7 @@
                 slideMargin: 10,
                 speed:500,
                 auto:false,
-                loop:true,
+                loop:false,
                 onSliderLoad: function() {
                     $('#image-gallery').removeClass('cS-hidden');
                 }  
