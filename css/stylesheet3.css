@@ -75,34 +75,32 @@ li{
 }
 
 .page1-btn{
-	background-color: white;
-	color: black;
+	color: white;
 	float: left;
+	background-color: #ead300;
 }
 
 .page2-btn{
-	background-color: #592B81;
 	color: white;
 	float: left;
+	background-color: #592B81;
 }
 .page3-btn{
-	background-color: white;
-	color: black;
+	color: white;
 	float: left;
+	background-color: #ed1d31;
 }
 .page1-btn:hover{
-	background-color:#EAD300;
-	color: white;
+	background-color:#c9b100;
 	transition: .2s;
 }
 
 .page2-btn:hover{
-	color: white;
+	background-color: #431F60;
 	transition: .2s;
 }
 .page3-btn:hover{
-	background-color: #ED1D31;
-	color: white;
+	background-color: #c1272d;
 	transition: .2s;
 }
 .tab {

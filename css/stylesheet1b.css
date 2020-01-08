@@ -67,34 +67,32 @@ p{
 }
 
 .page1-btn{
-	color: black;
+	color: white;
 	float: left;
-	background-color: white;
+	background-color: #ead300;
 }
 
 .page2-btn{
-	background-color: #592B81;
 	color: white;
 	float: left;
+	background-color: #592B81;
 }
 .page3-btn{
-	color: black;
+	color: white;
 	float: left;
-	background-color: white;
+	background-color: #ed1d31;
 }
 .page1-btn:hover{
-	background-color:#EAD300;
-	color: white;
+	background-color:#c9b100;
 	transition: .2s;
 }
 
 .page2-btn:hover{
-	color: white;
+	background-color: #431F60;
 	transition: .2s;
 }
 .page3-btn:hover{
-	background-color: #ED1D31;
-	color: white;
+	background-color: #c1272d;
 	transition: .2s;
 }
 .tab {
@@ -205,7 +203,7 @@ p{
 	cursor: pointer;
 	padding: 15px;
 	font-size: 16px;
-	width: 20%;
+	width: 25%;
 }
 .tablink:hover {
 	background: #C6267E;
@@ -346,6 +344,7 @@ p{
 #image-gallery{
 	margin-top: 30px;
 }
+
 .slideCaption{
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -353,6 +352,7 @@ p{
 	height: 110px;
 	color: white;
 }
+
 #division-column3{
 	width: 100%;
 	padding: 80px 0px 50px 0px;
