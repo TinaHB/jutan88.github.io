@@ -95,6 +95,44 @@ p{
 	background-color: #c1272d;
 	transition: .2s;
 }
+.tab {
+	overflow: hidden;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	background-color: #ED1D31;
+}
+.tab button {
+	border: none;
+	float: left;
+	outline: none;
+	cursor: pointer;
+	padding: 10px;
+	transition: 0.3s;
+	font-size: 16px;
+	color: white;
+}
+.tablinks1 {
+	background-color: #C30F20;
+	width: calc(100%/3);
+}
+.tablinks2 {
+	background-color: #ED1D31;
+	width: calc(100%/3);
+}
+.tablinks3 {
+	background-color: #ED1D31;
+	width: calc(100%/3);
+}
+.tablinks1:hover {
+	background-color: #C30F20;
+}
+.tablinks2:hover {
+	background-color: #C30F20;
+}
+.tablinks3:hover {
+	background-color: #C30F20;
+}
 
 /* Main Container */
 .map{

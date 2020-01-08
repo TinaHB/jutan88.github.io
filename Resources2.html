@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Chemotherapy Survey</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/resources-styles2.css" type="text/css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+</head>
+<body>
+	<div id="full-nav">
+		<div id="topNav">
+			<div>
+				<a href="index.html"><img class="logo" src="Imgs/logo-01.png" alt="logo"></a>
+			</div>
+			<div class="nav-links">
+				<button onClick="window.location.href='TreatmentPathway.html'" class="page1-btn">Treatment Overview</button>
+				<button onClick="window.location.href='CounsellingTool_1.html'" class="page2-btn">Counselling Interventions</button>
+				<button onClick="window.location.href='#'" class="page3-btn">Resources</button>
+			</div>
+		</div>
+		<div class="tab">
+			<button onClick="window.location.href='Resources.html'" class="tablinks1">Resources</button>
+			<button onClick="window.location.href='#'" class="tablinks2"><a href="#">Chemotherapy Survey</a></button>
+			<button onClick="window.location.href='Resources3.html'" class="tablinks3"><a href="#">Immunotherapy Survey</a></button>
+		</div>
+	</div>
+	<div id="main-content">
+		<div id="Survey">
+		  <div class="full-column">
+					<h1 style="text-align: left; margin-top: 150px; color: #ED1D31;"><br>Chemoradiation: considering the benefits and risks</h1>
+					<p><br>Consider the statements below about the benefits of chemoradiation and indicate how important each is to you.<br><br></p>
+					<div class="sliderScaleThing">
+						<div class="slider-row">
+							<div class="spacer">
+								<p class="indicator-right">Extremely Important</p>
+								<p class="indicator-left">Not Important</p>
+							</div>
+						</div>
+						<div class="slider-row">
+							<p class="range-text">I may live longer<span id="range-one"></span></p>
+							<input type="range" id="slider1" min="0" max="99.99"  value="50" class="slider" onchange="showValue(this.value, 'range-one')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">My symptoms of cancer may improve<span id="range-two"></span></p>
+							<input type="range" id="slider2" min="0" max="99.99" value="50"  class="slider" onchange="showValue(this.value, 'range-two')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">I feel like I am actively fighting the cancer<span id="range-three"></span></p>
+							<input type="range" id="slider3" min="0"max="99.99" value="50" class="slider" onchange="showValue(this.value, 'range-three')">
+						</div>
+						<div class="slider-row" style="padding-bottom: 30px;">
+							<p class="range-text">Other (list here): &nbsp;<input class="otherRange" type="text"><span id="range-four"></span></p>
+							<input type="range" id="slider4" min="0" max="99.99"  value="50" class="slider" onchange="showValue(this.value, 'range-four')">
+						</div>
+					</div>
+					<p>Consider the following statements and indicate how concerned you are about treatment with chemoradiation.<br><br></p>
+					<div class="sliderScaleThing">
+						<div class="slider-row">
+							<div class="spacer">
+								<p class="indicator-right">Not Concerned</p>
+								<p class="indicator-left">Very Concerned</p>
+							</div>
+						</div>
+						<div class="slider-row">
+							<p class="range-text">There is a potential for side effects<span id="range-five"></span></p>
+							<input type="range" id="slider5" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-five')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">I will have to make regular trips to the hospital/cancer centre<span id="range-six"></span></p>
+							<input type="range" id="slider6" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-six')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">There is no guarantee the treatment will work<span id="range-seven"></span></p>
+							<input type="range" id="slider7" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-seven')">
+						</div>
+						<div class="slider-row">
+							<p class="range-text">Other (list here): &nbsp;<input class="otherRange" type="text"><span id="range-eight"></span></p>
+							<input type="range" id="slider8" min="0" max="99.99"  value="50" class="slider" onchange="showValue((this.value), 'range-eight')">
+						</div>
+					</div>
+					<p id="avg"></p>
+					<div class="rrIndicator">
+						<button id="rri-btn" onclick="f_color()"> RECOMMENDED NEXT STEPS </button>
+						<div id="myBar"><p id= "demo"></p></div>
+					</div>
+				</div>
+				<div id="division-column6">
+					<div class="full-column">
+						<h1 style="text-align: left; color: white;">Final Questions</h1>
+						<p>
+							<br><strong>1.</strong> Do you understand the benefits of the chemoradiation?
+							<br><strong>2.</strong> Do you have any questions for your healthcare team about risks and side-effects of chemoradiation?
+							<br><strong>3.</strong> Is there anything else that you would like to know?
+							<br><strong>4.</strong> Have all you questions been answered, and all your concerns addressed?
+							<br><strong>5.</strong> Can I introduce you to the rest of the team to help you schedule your treatment?<br>
+						</p>
+					</div>
+				</div>
+			<div id="division-column7">
+				<div class="full-column">
+					<div class="center-icon">
+						<a target="_blank" href="pdf/Clinical Practicalities of Chemoradiation.pdf">
+							<img src="Imgs/Graphics_icon-download3.png" alt="download">
+						</a>
+					</div>
+					<div style="clear: both;"></div>
+					<a target="_blank" href="pdf/Clinical Practicalities of Chemoradiation.pdf">
+						<p class="download-text"><strong>DOWNLOAD: </strong>Clinical Practicalities of Chemoradiation<br></p>
+					</a>
+				</div>
+			</div>
+			<!---<div class="print-section">
+				<div class="full-column">
+					<a target="_blank" href="#">
+						<p class="download-text"><strong>Print Section</strong></p>
+					</a>
+				</div>
+			</div>--->
+		</div>
+	</div>
+	
+	<div style="clear: both;"></div>
+	<div id="footer">
+		<p class="footnotes">This website was developed by a scientific planning committee of Canadian lung cancer experts including medical oncologists, radiation oncologists, an oncology pharmacist and an oncology nurse, for educational purposes and should be used with patients to help them make the most informed treatment decision.<br><br>Reference 1: Rami-Porta R, Asamura H, Travis WD, Rusch VW. Lung Cancer — Major Changes in the American Joint Committee on Cancer Eighth Edition Cancer Staging Manual. CA Cancer J Clin. 2017.</p>
+		
+		<img class="footerlogo" src="Imgs/Banners-02.png" alt="logo">
+		<div style="clear: both;"></div>
+		<img class="footertagline" src="Imgs/Graphics_Tagline.png" alt="logotagline">
+	</div>
+	<script type="application/javascript" src="js/sliderscalething.js"></script>
+	<script>
+		var s = document.createElement("style");
+			document.head.appendChild(s);
+			slider1.addEventListener("input", () => {
+			s.textContent = `#slider1::-webkit-slider-thumb{background: hsl(${slider1.value}, 100%, 43%)}`
+		});
+		var k = document.createElement("style");
+			document.head.appendChild(k);
+			slider2.addEventListener("input", () => {
+			k.textContent = `#slider2::-webkit-slider-thumb{background: hsl(${slider2.value}, 100%, 43%)}`
+		});
+		var y = document.createElement("style");
+			document.head.appendChild(y);
+			slider3.addEventListener("input", () => {
+			y.textContent = `#slider3::-webkit-slider-thumb{background: hsl(${slider3.value}, 100%, 43%)}`
+		});
+		var u = document.createElement("style");
+			document.head.appendChild(u);
+			slider4.addEventListener("input", () => {
+			u.textContent = `#slider4::-webkit-slider-thumb{background: hsl(${slider4.value}, 100%, 43%)}`
+		});
+		
+		var j = document.createElement("style");
+			document.head.appendChild(j);
+			slider5.addEventListener("input", () => {
+			j.textContent = `#slider5::-webkit-slider-thumb{background: hsl(${slider5.value}, 100%, 43%)}`
+		});
+		var o = document.createElement("style");
+			document.head.appendChild(o);
+			slider6.addEventListener("input", () => {
+			o.textContent = `#slider6::-webkit-slider-thumb{background: hsl(${slider6.value}, 100%, 43%)}`
+		});
+		var w = document.createElement("style");
+			document.head.appendChild(w);
+			slider7.addEventListener("input", () => {
+			w.textContent = `#slider7::-webkit-slider-thumb{background: hsl(${slider7.value}, 100%, 43%)}`
+		});
+		var z = document.createElement("style");
+			document.head.appendChild(z);
+			slider8.addEventListener("input", () => {
+			z.textContent = `#slider8::-webkit-slider-thumb{background: hsl(${slider8.value}, 100%, 43%)}`
+		});
+			
+	</script>
+
+	
+</body>
+</html>
