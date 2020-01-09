@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Treatment Plan</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/select2.css" type="text/css">
 	<link rel="stylesheet" href="css/stylesheet1b.css" type="text/css">
 	<link rel="stylesheet" href="css/lightslider.css" type="text/css">
 	<link rel="stylesheet" href="css/colorbox.css" type="text/css">
@@ -13,6 +14,7 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery.colorbox.js" type="text/javascript"></script>
+	<script src="js/select2.full.js" type="text/javascript"></script>
 	<script src="js/iframe-colorbox.js" type="text/javascript"></script>
 	
 </head>
@@ -95,37 +97,38 @@
 		  <div id="division-column8">
 				<div class="full-column">
 					<h1>Stage Group Calculator</h1>
-					<p style="text-align: center;"><br>Select Primary Tumour (T), Regional Lymph Nodes (N), and Distant Metastasis (M):<br>
+					<p style="text-align: center;"><br>Select Primary Tumour (T), Regional Lymph Nodes (N), and Distant Metastasis (M):<br><br>
 					</p>
-					<div style="padding-bottom: 30px;" class="full-column">
-						<a class="iframe" target="_blank" href="pdf/IASLC 8th Edition_TNM Definitions.pdf">
-							<p class="download-text">Click here for T/N/M definitions</p>
-						</a>
-					</div>
 					<div style="clear: both;"></div>
-						<select class="selectstage" id="select1"> 
-							<option selected value="TX">TX</option> 
+						<select class="select2 narrow wrap" id="select1"> 
+							<option selected disabled>T</option> 
+							<option value="TX">TX - Primary tumour cannot be assessed, or tumour proven by the presence of malignant cells in sputum or bronchial washings but not visualized by imaging or bronchoscopy</option> 
 							<option value="Tis">Tis - Carcinoma in situ</option> 
-							<option value="T1mi">T1mi</option> 
-						    <option value="T1a">T1a</option> 
-							<option value="T1b">T1b</option> 
-							<option value="T1c">T1c</option> 
-						    <option value="T2a">T2a</option> 
-							<option value="T2b">T2b</option> 
-							<option value="T3">T3</option> 
-							<option value="T4">T4</option> 
+							<option value="T1mi">T1mi - Minimally invasive adenocarcinoma2</option> 
+							<option disabled>T1 - Tumour 3 cm or less in greatest dimension, surrounded by lung or visceral pleura, without bronchoscopic evidence of invasion more proximal than the lobar bronchus (i.e., not in the main bronchus)</option> 
+						    <option value="T1a">T1a - Tumour 1 cm or less in greatest dimension1</option> 
+							<option value="T1b">T1b - Tumour more than 1 cm but not more than 2 cm in greatest dimension1</option> 
+							<option value="T1c">T1c - Tumour more than 2 cm but not more than 3 cm in greatest dimension1</option> 
+							<option disabled>T2 - Tumour more than 3 cm but not more than 5 cm; or tumour with any of the following features: (1) Involves main bronchus regardless of distance to the carina, but without involving the carina (2) Invades visceral pleura (3) Associated with atelectasis or obstructive pneumonitis that extends to the hilar region, either involving part of the lung or the entire lung</option> 
+						    <option value="T2a">T2a - Tumour more than 3 cm but not more than 4 cm in greatest dimension</option> 
+							<option value="T2b">T2b - Tumour more than 4 cm but not more than 5 cm in greatest dimension</option> 
+							<option value="T3">T3 - Tumour more than 5 cm but not more than 7 cm in greatest dimension or one that directly invades any of the following: chest wall (including superior sulcus tumours), phrenic nerve, parietal pericardium; or associated separate tumour nodule(s) in the same lobe as the primary</option> 
+							<option value="T4">T4 - Tumours more than 7 cm or one that invades any of the following: diaphragm, mediastinum, heart, great vessels, trachea, recurrent laryngeal nerve, oesophagus, vertebral body, carina; separate tumour nodule(s) in a different ipsilateral lobe to that of the primary</option> 
 						</select> 
-						<select class="selectstage" id="select2" > 
-							<option selected value="N0">N0</option> 
-							<option value="N1">N1</option> 
-							<option value="N2">N2</option> 
-							<option value="N3">N3</option>
+						<select class="select2 narrow wrap" id="select2" > 
+							<option selected disabled>N</option> 
+							<option value="N0">N0 - No regional lymph node metastasis</option> 
+							<option value="N1">N1 - Metastasis in ipsilateral peribronchial and/or ipsilateral hilar lymph nodes and intrapulmonary nodes, including involvement by direct extension</option> 
+							<option value="N2">N2 - Metastasis in ipsilateral mediastinal and/or subcarinal lymph node(s)</option> 
+							<option value="N3">N3 - Metastasis in contralateral mediastinal, contralateral hilar, ipsilateral or contralateral scalene or supraclavicular lymph node(s)</option>
 						</select> 
-						<select class="selectstage" id="select3" > 
-							<option selected value="M0">M0</option> 
-							<option value="M1a">M1a</option> 
-							<option value="M1b">M1b</option> 
-						    <option value="M1c">M1c</option> 
+						<select class="select2 narrow wrap" id="select3" > 
+							<option selected disabled>M</option> 
+							<option value="M0">M0 - No distant metastasis</option> 
+							<option disabled>M1 - Distant metastasis</option> 
+							<option value="M1a">M1a - Separate tumour nodule(s) in a contralateral lobe; tumour with pleural or pericardial nodules or malignant pleural or pericardial effusion</option> 
+							<option value="M1b">M1b - Single extrathoracic metastasis in a single organ</option> 
+						    <option value="M1c">M1c - Multiple extrathoracic metastases in one or several organs</option> 
 						</select> 
 					<div class="full-column" style="width: 30%;">
 						<button class="calculate-btn" onclick="getOption()">Submit</button>
@@ -444,6 +447,12 @@
 	<script type="application/javascript" src="js/sliderscalething.js"></script>
 	<script type="application/javascript" src="js/lightslider.min.js"></script>
 	<script type="application/javascript" src="js/calculator.js"></script>
+	<script>
+		var $select2 = $('.select2').select2({
+			containerCssClass: "wrap",
+			//minimumResultsForSearch: Infinity, //removes the search box
+		})
+	</script>
 	<script>
 		jQuery('#tablink2').click(function(){ $('#division-column2').resize(); });
 	</script>

@@ -410,6 +410,25 @@ p{
 	transition: 0.2s;
 	text-align: left;
 }
+
+.select2 {
+	width: 32%!important;
+}
+.select2-results__options{
+	font-family: 'Lato', sans-serif;
+}
+.wrap.select2-selection--single {
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+}
+.select2-container .wrap.select2-selection--single .select2-selection__rendered {
+    word-wrap: break-word;
+	height: 40px;
+    text-overflow: hidden;
+    white-space: normal;
+	line-height: 1.2;
+	font-family: 'Lato', sans-serif;
+}
 .calculate-btn{
 	background-color: #ED258B;
 	border-radius: 50px;
