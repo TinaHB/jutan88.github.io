@@ -7,7 +7,7 @@
 	<title>Treatment Plan</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/select2.css" type="text/css">
-	<link rel="stylesheet" href="css/stylesheet1b.css" type="text/css">
+	<link rel="stylesheet" href="css/stylesheet1.css" type="text/css">
 	<link rel="stylesheet" href="css/lightslider.css" type="text/css">
 	<link rel="stylesheet" href="css/colorbox.css" type="text/css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -135,7 +135,7 @@
 					</div>
 					<p style="text-align: center;">Stage: <span class="output"></span> 
 					</p> 
-					<p class="tiny-text">Adapted from materials in the 2019 CCCEP Accredited Community Immuno-Oncology Support Kit (CIOSK) Education Initiative. Accessed December 2019.</p>
+					<p class="tiny-text" style="text-align: center;">Adapted from materials in the 2019 CCCEP Accredited Community Immuno-Oncology Support Kit (CIOSK) Education Initiative. Accessed December 2019.</p>
 				</div> 
 			</div>	
 			<div id="division-column1">
@@ -303,6 +303,7 @@
 			</div>
 			<div id="division-column7">
 				<div class="full-column">
+					<p style="text-align: center; "><br>For an <strong>Interactive Survey</strong> considering the benefits and risks of chemoradiation, please click on the icon below. <br><br></p>
 					<div class="center-icon">
 						<a href="Resources2.html">
 							<img src="Imgs/Graphics_icon-survey.png" alt="download">
@@ -449,10 +450,14 @@
 	<script type="application/javascript" src="js/lightslider.min.js"></script>
 	<script type="application/javascript" src="js/calculator.js"></script>
 	<script>
+		function templateSelection(val) {
+  			return val.id;}
+		
 		var $select2 = $('.select2').select2({
 			containerCssClass: "wrap",
+  			templateSelection: templateSelection,
 			//minimumResultsForSearch: Infinity, //removes the search box
-		})
+		});
 	</script>
 	<script>
 		jQuery('#tablink2').click(function(){ $('#division-column2').resize(); });

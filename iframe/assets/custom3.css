@@ -22,7 +22,7 @@ p{
 }
 #sketchpad {
     border: 1px solid #eee;
-    cursor: crosshair;
+    cursor: url("../../Imgs/Graphics_pencil2.png"), default;
 	background-image: url("../../Imgs/Graphics_Stage3C.png");
 	background-repeat: no-repeat;
 	background-size: contain;
