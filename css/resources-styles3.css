@@ -422,6 +422,25 @@ th {
 .download-text:hover{
 	background-color: #A0A0A0;
 }
+.resource-btn{
+	background-color: #DD0003;
+	color: white;
+	text-align: center;
+	width: 50%;
+	margin: auto;
+	border-radius: 30px;
+	padding: 10px;
+	border: none;
+	font-size: 12px;
+}
+.resource-btn img{
+	align-self: auto;
+	float: left;
+	margin: 0px 10px 0px 10px;
+}
+.resource-btn:hover{
+	background-color: #A0A0A0;
+}
 .center-icon{
 	width: 100px;
 	margin: auto;
@@ -457,6 +476,7 @@ th {
 	float: left;
 	padding: 0px;
 	font-size: 18px;
+	margin-top: -10px;
 }
 .range-text span{
 	display: none;

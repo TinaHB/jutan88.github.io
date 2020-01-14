@@ -294,6 +294,7 @@ p{
 .two-column{
 	width: 50%;
 	margin: auto;
+	margin: auto;
 	float: left;
 	padding: 10px;
 }
@@ -456,7 +457,7 @@ p{
 .download-text{
 	width: 50%;
 	margin: auto;
-	margin-top: 30px;
+	margin-bottom: 30px;
 	text-align: center;
 	background-color: #D0D0D0;
 	border-radius: 30px;
@@ -464,7 +465,27 @@ p{
 	border: none;
 	font-size: 18px;
 }
+
 .download-text:hover{
+	background-color: #A0A0A0;
+}
+.resource-btn{
+	background-color: #DD0003;
+	color: white;
+	text-align: center;
+	width: 50%;
+	margin: auto;
+	border-radius: 30px;
+	padding: 10px;
+	border: none;
+	font-size: 12px;
+}
+.resource-btn img{
+	align-self: auto;
+	float: left;
+	margin: 0px 10px 0px 10px;
+}
+.resource-btn:hover{
 	background-color: #A0A0A0;
 }
 .center-icon{

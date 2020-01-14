@@ -423,9 +423,28 @@ th {
 	border: none;
 	font-size: 18px;
 }
+
 .download-text:hover{
 	background-color: #A0A0A0;
 }
+.resource-btn{
+	background-color: #DD0003;
+	color: white;
+	text-align: center;
+	margin: auto;
+	border-radius: 30px;
+	padding: 10px;
+	border: none;
+	font-size: 12px;
+}
+.resource-btn img{
+	float: left;
+	margin: -20px 10px 0px 10px;
+}
+.resource-btn:hover{
+	background-color: #A0A0A0;
+}
+
 .center-icon{
 	width: 100px;
 	margin: auto;
