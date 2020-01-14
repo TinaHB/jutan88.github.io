@@ -418,6 +418,9 @@ p{
 .select2-results__options{
 	font-family: 'Lato', sans-serif;
 }
+.select2-dropdown{
+	width: 500px !important;
+}
 .wrap.select2-selection--single {
 	height: 100%;
 	font-family: 'Lato', sans-serif;
@@ -430,6 +433,7 @@ p{
 	line-height: 2;
 	font-family: 'Lato', sans-serif;
 }
+
 .calculate-btn{
 	background-color: #ED258B;
 	border-radius: 50px;
@@ -760,5 +764,7 @@ p{
 	.drugtherapy{
 		width: 95%;
 	}
-	
+	.select2-dropdown{
+		width: 400px !important;
+	}
 }
