@@ -729,15 +729,16 @@ $(document).ready(function() {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
       header: {
         left: 'prev,next today',
-        center: 'title',
-        right: 'none'
+       // center: 'title',
+        right: 'title'
       },
       defaultDate: '2020-01-15',
 	        navLinks: true, // can click day/week names to navigate views
       selectable: true,
       selectMirror: true,
 	  displayEventEnd: true,
-	  longPressDelay: 0,
+		editable: false,
+	  longPressDelay: 0.25,
       eventClick: function(info) { 
 	    $("#dialog-form").dialog('option', 'title', 'Editing Event');
         //set up the date information for recurring if necessary
@@ -857,19 +858,8 @@ $(document).ready(function() {
   });
 
 </script>
-
-
-
-
-
 <style>
 
-  body {
-    margin: 40px 10px;
-    padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-  }
 
     label, input { display:block; }
     input.text { margin-bottom:12px; width:95%; padding: .4em; }
@@ -895,24 +885,33 @@ $(document).ready(function() {
 <body>
 	<div class="full-column hidden-print">
 		<div class="two-column">
-			<h1>To add in an appointment for a single day</h1>
+			<h1>Please go through the following steps to create an event in the calendar:</h1>
 			<ul>
-				<li>Click on the desired date on the calendar</li>
-				<li>A window should pop-up asking you to enter Event Content </li>
-				<li>Enter the appointment details and click “OK” to save</li>
+				<li>Click on a date to generate an event form</li>
+				<li>Select <strong>Radiation Therapy</strong> or <strong>Chemotherapy</strong></li>
+				<li>Select <strong>Start Date</strong> of the event </li>
+				<li>For one day event, click <strong>Save Event</strong><br>For <span style="text-decoration: underline;">recurring event,</span> check the Recurring checkbox. Continue to Step 5 </li>
+				<li>Select the <strong>Weekday(s)</strong> the event will occur on </li>
+				<li>Select the End Date of the event </li>
+				<li>Click <strong>Save Event</strong> </li>
+				
 			</ul>
 		</div>
 		<div class="two-column">
-			<h1>To add in recurring appointments that occurs across several days:</h1>
+			<h1>Follow the steps below to edit an existing event: </h1>
 			<ul>
-				<li>Click on the start date and hold the left-click button</li>
-				<li>While holding the button, drag the cursor across the calendar to the end date </li>
-				<li>Once you reach the end date, release the left-click button and a window should pop-up asking you to enter Event Content</li>
-				<li>Enter the appointment details and click “OK” to save</li>
+				<li>Click on the existing event</li>
+				<li>Update the event details</li>
+				<li>Click <strong>Save Event</strong></li>
+			</ul>
+			<h1>Follow the steps below to delete an existing event: </h1>
+			<ul>
+				<li>Click on the existing event</li>
+				<li>Click the <strong>Delete</strong> button</li>
 			</ul>
 		</div>
 	</div>
-	<div style="clear: both;"><br></div>
+	<div style="clear: both;"></div>
 	<div id="calendar"><br>
 		<button class="printBtn hidden-print">Print</button>
 	</div>
@@ -1073,6 +1072,10 @@ $(document).ready(function() {
   </fieldset>
 </form></div>
  
-
+<script type="text/javascript">
+  $('.printBtn').on('click', function (){
+	window.print();
+  });
+</script>
 </body>
 </html>
