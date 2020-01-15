@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
+<meta charset='utf-8' />
 
 
 
-<link href="fullcalendar/core/main.css" rel="stylesheet" />
-<link href="fullcalendar/daygrid/main.css" rel="stylesheet" />
-<link href="fullcalendar/timegrid/main.css" rel="stylesheet" />
-<script src="fullcalendar/core/main.js"></script>
-<script src="fullcalendar/interaction/main.js"></script>
-<script src="fullcalendar/daygrid/main.js"></script>
-<script src="fullcalendar/timegrid/main.js"></script>
+<link href='fullcalendar/core/main.css' rel='stylesheet' />
+<link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+<link href='fullcalendar/timegrid/main.css' rel='stylesheet' />
+<link href="fullcalendar/style.css" rel='stylesheet' />
+
+<script src='fullcalendar/core/main.js'></script>
+<script src='fullcalendar/interaction/main.js'></script>
+<script src='fullcalendar/daygrid/main.js'></script>
+<script src='fullcalendar/timegrid/main.js'></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -869,11 +871,6 @@ $(document).ready(function() {
     font-size: 14px;
   }
 
-  #calendar {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
     label, input { display:block; }
     input.text { margin-bottom:12px; width:95%; padding: .4em; }
     fieldset { padding:0; border:0; margin-top:25px;  margin-bottom:5px;}
@@ -896,8 +893,29 @@ $(document).ready(function() {
 
 </head>
 <body>
-
-  <div id="calendar"></div>
+	<div class="full-column hidden-print">
+		<div class="two-column">
+			<h1>To add in an appointment for a single day</h1>
+			<ul>
+				<li>Click on the desired date on the calendar</li>
+				<li>A window should pop-up asking you to enter Event Content </li>
+				<li>Enter the appointment details and click “OK” to save</li>
+			</ul>
+		</div>
+		<div class="two-column">
+			<h1>To add in recurring appointments that occurs across several days:</h1>
+			<ul>
+				<li>Click on the start date and hold the left-click button</li>
+				<li>While holding the button, drag the cursor across the calendar to the end date </li>
+				<li>Once you reach the end date, release the left-click button and a window should pop-up asking you to enter Event Content</li>
+				<li>Enter the appointment details and click “OK” to save</li>
+			</ul>
+		</div>
+	</div>
+	<div style="clear: both;"><br></div>
+	<div id="calendar"><br>
+		<button class="printBtn hidden-print">Print</button>
+	</div>
 
 <div id="dialog-form" title="Create New Event"><form>
   <fieldset>
