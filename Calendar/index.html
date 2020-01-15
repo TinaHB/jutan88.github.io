@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+
+
+<link href="fullcalendar/core/main.css" rel="stylesheet" />
+<link href="fullcalendar/daygrid/main.css" rel="stylesheet" />
+<link href="fullcalendar/timegrid/main.css" rel="stylesheet" />
+<script src="fullcalendar/core/main.js"></script>
+<script src="fullcalendar/interaction/main.js"></script>
+<script src="fullcalendar/daygrid/main.js"></script>
+<script src="fullcalendar/timegrid/main.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  var startyear = "";
+  var startdayofweek = "";
+  var startdayofmonth = "";
+  var startmonth = "";
+  var editevent = "";
+  var titletype = true;
+  var recurringonoroff = false;
+  var recurringtype = [0,0,0,0,0,0,0];
+  var currid = "";
+  var checkedornot = false;
+  var calendarobj;
+  var end = null;
+</script>
+
+<script>
+
+function timelongtoshort(strlongtime){
+  if (strlongtime == "00:00:00")
+    return "12 am";
+  else if (strlongtime == "00:30:00")
+    return "12:30 am";
+  else if (strlongtime == "01:00:00")
+    return "1 am";
+  else if (strlongtime == "01:30:00")
+    return "1:30 am";
+  else if (strlongtime == "02:00:00")
+    return "2 am";
+  else if (strlongtime == "02:30:00")
+    return "2:30 am";
+  else if (strlongtime == "03:00:00")
+    return "3 am";
+  else if (strlongtime == "03:30:00")
+    return "3:30 am";
+  else if (strlongtime == "04:00:00")
+    return "4 am";
+  else if (strlongtime == "04:30:00")
+    return "4:30 am";
+  else if (strlongtime == "05:00:00")
+    return "5 am";
+  else if (strlongtime == "05:30:00")
+    return "5:30 am";
+  else if (strlongtime == "06:00:00")
+    return "6 am";
+  else if (strlongtime == "06:30:00")
+    return "6:30 am";
+  else if (strlongtime == "07:00:00")
+    return "7 am";
+  else if (strlongtime == "07:30:00")
+    return "7:30 am";
+  else if (strlongtime == "08:00:00")
+    return "8 am";
+  else if (strlongtime == "08:30:00")
+    return "8:30 am";
+  else if (strlongtime == "09:00:00")
+    return "9 am";
+  else if (strlongtime == "09:30:00")
+    return "9:30 am";
+  else if (strlongtime == "10:00:00")
+    return "10 am";
+  else if (strlongtime == "10:30:00")
+    return "10:30 am";
+  else if (strlongtime == "11:00:00")
+    return "11 am";
+  else if (strlongtime == "11:30:00")
+    return "11:30 am";
+  else if (strlongtime == "12:00:00")
+    return "12 pm";
+  else if (strlongtime == "12:30:00")
+    return "12:30 pm";
+  else if (strlongtime == "13:00:00")
+    return "1 pm";
+  else if (strlongtime == "13:30:00")
+    return "1:30 pm";
+  else if (strlongtime == "14:00:00")
+    return "2 pm";
+  else if (strlongtime == "14:30:00")
+    return "2:30 pm";
+  else if (strlongtime == "15:00:00")
+    return "3 pm";
+  else if (strlongtime == "15:30:00")
+    return "3:30 pm";
+  else if (strlongtime == "16:00:00")
+    return "4 pm";
+  else if (strlongtime == "16:30:00")
+    return "4:30 pm";
+  else if (strlongtime == "17:00:00")
+    return "5 pm";
+  else if (strlongtime == "17:30:00")
+    return "5:30 pm";
+  else if (strlongtime == "18:00:00")
+    return "6 pm";
+  else if (strlongtime == "18:30:00")
+    return "6:30 pm";
+  else if (strlongtime == "19:00:00")
+    return "7 pm";
+  else if (strlongtime == "19:30:00")
+    return "7:30 pm";
+  else if (strlongtime == "20:00:00")
+    return "8 pm";
+  else if (strlongtime == "20:30:00")
+    return "8:30 pm";
+  else if (strlongtime == "21:00:00")
+    return "9 pm";
+  else if (strlongtime == "21:30:00")
+    return "9:30 pm";
+  else if (strlongtime == "22:00:00")
+    return "10 pm";
+  else if (strlongtime == "22:30:00")
+    return "10:30 pm";
+  else if (strlongtime == "23:00:00")
+    return "11 pm";
+  else 
+    return "11:30 pm";
+};
+function timeshorttolong(strshorttime){
+  if (strshorttime == "12 am")
+    return "00:00:00";
+  else if (strshorttime == "12:30 am")
+    return "00:30:00";
+  else if (strshorttime == "1 am")
+    return "01:00:00";
+  else if (strshorttime == "1:30 am")
+    return "01:30:00";
+  else if (strshorttime == "2 am")
+    return "02:00:00";
+  else if (strshorttime == "2:30 am")
+    return "02:30:00";
+  else if (strshorttime == "3 am")
+    return "03:00:00";
+  else if (strshorttime == "3:30 am")
+    return "03:30:00";
+  else if (strshorttime == "4 am")
+    return "04:00:00";
+  else if (strshorttime == "4:30 am")
+    return "04:30:00";
+  else if (strshorttime == "5 am")
+    return "05:00:00";
+  else if (strshorttime == "5:30 am")
+    return "05:30:00";
+  else if (strshorttime == "6 am")
+    return "06:00:00";
+  else if (strshorttime == "6:30 am")
+    return "06:30:00";
+  else if (strshorttime == "7 am")
+    return "07:00:00";
+  else if (strshorttime == "7:30 am")
+    return "07:30:00";
+  else if (strshorttime == "8 am")
+    return "08:00:00";
+  else if (strshorttime == "8:30 am")
+    return "08:30:00";
+  else if (strshorttime == "9 am")
+    return "09:00:00";
+  else if (strshorttime == "9:30 am")
+    return "09:30:00";
+  else if (strshorttime == "10 am")
+    return "10:00:00";
+  else if (strshorttime == "10:30 am")
+    return "10:30:00";
+  else if (strshorttime == "11 am")
+    return "11:00:00";
+  else if (strshorttime == "11:30 am")
+    return "11:30:00";
+  else if (strshorttime == "12 pm")
+    return "12:00:00";
+  else if (strshorttime == "12:30 pm")
+    return "12:30:00";
+  else if (strshorttime == "1 pm")
+    return "13:00:00";
+  else if (strshorttime == "1:30 pm")
+    return "13:30:00";
+  else if (strshorttime == "2 pm")
+    return "14:00:00";
+  else if (strshorttime == "2:30 pm")
+    return "14:30:00";
+  else if (strshorttime == "3 pm")
+    return "15:00:00";
+  else if (strshorttime == "3:30 pm")
+    return "15:30:00";
+  else if (strshorttime == "4 pm")
+    return "16:00:00";
+  else if (strshorttime == "4:30 pm")
+    return "16:30:00";
+  else if (strshorttime == "5 pm")
+    return "17:00:00";
+  else if (strshorttime == "5:30 pm")
+    return "17:30:00";
+  else if (strshorttime == "6 pm")
+    return "18:00:00";
+  else if (strshorttime == "6:30 pm")
+    return "18:30:00";
+  else if (strshorttime == "7 pm")
+    return "19:00:00";
+  else if (strshorttime == "7:30 pm")
+    return "19:30:00";
+  else if (strshorttime == "8 pm")
+    return "20:00:00";
+  else if (strshorttime == "8:30 pm")
+    return "20:30:00";
+  else if (strshorttime == "9 pm")
+    return "21:00:00";
+  else if (strshorttime == "9:30 pm")
+    return "21:30:00";
+  else if (strshorttime == "10 pm")
+    return "22:00:00";
+  else if (strshorttime == "10:30 pm")
+    return "22:30:00";
+  else if (strshorttime == "11 pm")
+    return "23:00:00";
+  else 
+    return "23:30:00";
+};
+
+function numbertostring(strmonth){
+      var res = "";
+      if (strmonth == "0")
+         res = "January";
+      else if (strmonth == "1")
+	 res = "February";
+      else if (strmonth == "2")
+	 res = "March";
+      else if (strmonth == "3")
+	 res = "April";
+      else if (strmonth == "4")
+	 res = "May";
+      else if (strmonth == "5")
+	 res = "June";
+      else if (strmonth == "6")
+	 res = "July";
+      else if (strmonth == "7")
+	 res = "August";
+      else if (strmonth == "8")
+	 res = "September";
+      else if (strmonth == "9")
+	 res = "October";
+      else if (strmonth == "10")
+	 res = "November";
+      else if (strmonth == "11")
+	 res = "December";
+
+      return res;
+};
+
+function monthstringtonumber(strmonth){
+      var res = "";
+      if (strmonth == "January")
+         res = "01";
+      else if (strmonth == "February")
+	 res = "02";
+      else if (strmonth == "March")
+	 res = "03";
+      else if (strmonth == "April")
+	 res = "04";
+      else if (strmonth == "May")
+	 res = "05";
+      else if (strmonth == "June")
+	 res = "06";
+      else if (strmonth == "July")
+	 res = "07";
+      else if (strmonth == "August")
+	 res = "08";
+      else if (strmonth == "September")
+	 res = "09";
+  else if (strmonth == "October")
+	 res = "10";
+  else if (strmonth == "November")
+	 res = "11";
+  else if (strmonth == "December")
+	 res = "12";
+  return res;
+};
+
+function submittedForm() { 
+
+  
+  let titletype = document.getElementById("radiation").checked;
+  let tmptitle = "Radiation Therapy";
+  if (titletype == false)
+  tmptitle = "Chemotherapy";
+  
+  let year = $("#startyear").val();
+  let month = $("#startmonth").val();
+  let dayofmonth = $("#startdaymonth").val();
+
+  let chkmon = $("#chkrecmon")[0].checked;
+  let chktue = $("#chkrectue")[0].checked;
+  let chkwed = $("#chkrecwed")[0].checked;
+  let chkthu = $("#chkrecthu")[0].checked;
+  let chkfri = $("#chkrecfri")[0].checked;
+  let chksat = $("#chkrecsat")[0].checked;
+  let chksun = $("#chkrecsun")[0].checked;  
+ 
+
+  let recurring = $("#chkrec")[0].checked;
+  let occurence = "";
+  let endmonth = $("#monthend").val();
+  let endyear = $("#yearend").val();
+  let enddayofmonth = $("#daymonthend").val();
+
+  endmonth = monthstringtonumber(endmonth);
+
+  //get start date for comparison purposes
+  let compstart = new Date(year, Number(monthstringtonumber(month)), Number(dayofmonth), 0, 0, 0, 0);
+  let timecompstart = compstart.getTime();
+  let compend = new Date(endyear, Number(endmonth), Number(enddayofmonth), 0,0 , 0, 0);
+  let timecompend = compend.getTime();
+
+  let startbeforeend = false;
+
+  if (recurring == true){
+    if (chkmon == false & chktue == false & chkwed == false & chkthu == false & chkfri == false & chksat == false & chksun == false)
+    {
+       alert('Please select at least one week day for recurring events');
+	   return true;
+    }
+    if (timecompstart >= timecompend){
+      alert("End date for your recurring event is before or same as your start date.  Please choose an end date that is after your start date.");
+      return true;
+    }
+	else
+	{
+	  if (startbeforeend == true){
+       alert("End time for your recurring event is before or same as your start time.  Please choose an end time that is after your start time.");
+       return true;
+      }
+	}
+  }
+  else{  
+    if (startbeforeend == true){
+      alert("End time for your event is before or same as your start time.  Please choose an end time that is after your start time.");
+      return true;
+    }
+	
+  }
+
+
+  let strcolour = "#ec228b";
+  if (document.getElementById("radiation").checked == true)
+     strcolour = "#a8206b";
+
+  enddayofmonth = Number(enddayofmonth);
+  enddayofmonth = enddayofmonth + 1;
+  if (enddayofmonth < 10)
+    enddayofmonth = "0" + enddayofmonth;
+  month = monthstringtonumber(month);
+  //do a special event creation
+  if (recurring == true){
+    if (window.editevent == "true"){
+      let tmpeve = window.calendarobj.getEventById(window.currid);
+      tmpeve.remove();
+    }
+  
+      var tmpstart = year + "-" + month + "-" + dayofmonth;
+      var tmpend = endyear + "-" + endmonth + "-" + enddayofmonth;
+      var local = new Date(year, Number(month)-1, Number(dayofmonth)-1, 0, 0, 0, 0);
+      var tmpdow = local.getDay();
+      if (tmpdow == 6)
+         tmpdow = 0;
+      else
+        tmpdow = tmpdow + 1;
+
+      let tmpboolradiation = false;
+      if (document.getElementById("radiation").checked == true)
+        tmpboolradiation = true;
+  
+  
+      let dow = [];
+      if ((chksun == true) & (tmpboolradiation == false))
+        dow.push(0);
+      if (chkmon == true)
+        dow.push(1);
+      if (chktue == true)
+        dow.push(2);
+      if (chkwed == true)
+        dow.push(3);
+      if (chkthu == true)
+        dow.push(4);
+      if (chkfri == true)
+        dow.push(5);
+      if ((chksat == true) & (tmpboolradiation == false))
+        dow.push(6);
+      
+      window.calendarobj.addEvent({
+ 	   groupId: tmptitle + tmpstart, // recurrent events in this group move together
+           id: tmptitle + tmpstart,
+           title: tmptitle,
+           daysOfWeek:  dow ,
+           startRecur: tmpstart,
+		   backgroundColor: strcolour, 
+		   borderColor: strcolour, 
+           textColor: "#FFFFFF",
+
+       month: {
+        displayEventEnd: true
+       },
+       endRecur: tmpend
+     });
+  }
+  
+  else if (recurring == false){
+    //before adding this event we actually need to delete current event
+    if (window.editevent == "true"){
+      let tmpeve = window.calendarobj.getEventById(window.currid);
+      tmpeve.remove();
+    }
+    var tmpstr = year + "-" + month + "-" + dayofmonth;
+    window.calendarobj.addEvent({
+      id: tmptitle + tmpstr,
+      title: tmptitle,
+      start: tmpstr,
+      end: tmpstr,
+	  backgroundColor: strcolour, 
+	  borderColor: strcolour, 
+	  textColor: "#FFFFFF"
+    });
+  }
+       
+  $("#dialog-form").dialog("close");
+};
+
+function submittedcancelordelete(){
+  //we need to delete the current event
+  if (window.editevent == "true"){
+    let tmpeve = window.calendarobj.getEventById(window.currid);
+    tmpeve.remove();
+  }    
+  $("#dialog-form").dialog("close");
+};
+
+function startmonthchanged(){
+  //get the start year and start month
+
+  let startyear = $("#startyear").val();
+  let startmonth = monthstringtonumber($("#startmonth").val());
+  //determine the maximum day of month 
+  $("#startdaymonth").find('option').remove().end();
+  let totalnumberofdays = new Date(startyear, Number(startmonth), 0);
+
+  totalnumberofdays = totalnumberofdays.getDate();
+  for (let i = totalnumberofdays; i >= 1; i--){
+  	 let newoption = document.createElement("option");
+	 newoption.text = i.toString();
+  	 if (i < 10)
+        newoption.text = "0" + newoption.text;
+     $('#startdaymonth').append(newoption);
+   }
+};
+
+function endmonthchanged(){
+  //get the start year and start month
+  let endyear = $("#yearend").val();
+  let endmonth = monthstringtonumber($("#monthend").val());
+  let endday = $("#daymonthend").val();
+  endday = Number(endday);
+  //determine the maximum day of month 
+  $("#daymonthend").find('option').remove().end();
+  let totalnumberofdays = new Date(endyear, Number(endmonth), 0);
+
+  totalnumberofdays = totalnumberofdays.getDate();
+  for (let i = totalnumberofdays; i >= 1; i--){
+  	  let newoption = document.createElement("option");
+	  newoption.text = i.toString();
+  	  if (i < 10)
+            newoption.text = "0" + newoption.text;
+          $('#daymonthend').append(newoption);
+      }
+  //fill the options in the day of month selectmenu
+  if (endday < 10)
+    endday = "0" + endday;
+  $("#daymonthend").val(endday);
+};
+
+function radioswitched(){
+
+  if (document.getElementById("chkrec").checked == false)
+    return;
+  if (document.getElementById("radiation").checked == true){
+    document.getElementById("chkrecsun").disabled = true;
+	document.getElementById("chkrecsat").disabled = true;
+  }
+  else
+  {
+    document.getElementById("chkrecsun").disabled = false;
+	document.getElementById("chkrecsat").disabled = false; 
+  }
+
+}
+
+
+function checkboxswitched(){
+
+  window.recurringonoroff = $("#chkrec")[0].checked;
+  if (window.recurringonoroff == true){
+   $("#daymonthend").css("display", ""); 
+   $("#monthend").css("display", ""); 
+   $("#yearend").css("display", ""); 
+   $("#chkrecsun").css("display", ""); 
+   $("#lblchkrecsun").css("display", ""); 
+   $("#chkrecmon").css("display", ""); 
+   $("#lblchkrecmon").css("display", ""); 
+   $("#chkrectue").css("display", ""); 
+   $("#lblchkrectue").css("display", ""); 
+   $("#chkrecwed").css("display", ""); 
+   $("#lblchkrecwed").css("display", ""); 
+   $("#chkrecthu").css("display", ""); 
+   $("#lblchkrecthu").css("display", ""); 
+   $("#chkrecfri").css("display", ""); 
+   $("#lblchkrecfri").css("display", ""); 
+   $("#chkrecsat").css("display", ""); 
+   $("#lblchkrecsat").css("display", ""); 
+   
+   $('label[for="yearend"]').css('display', "");
+   $("#dialog-form").dialog("option", "height", 330);
+   let year = $("#startyear").val();
+   let month = $("#startmonth").val();
+   let dayofmonth = $("#startdaymonth").val();
+   let endyear = "";
+   let endmonth = "";
+   let enddayofmonth = "";
+   
+   
+   //let tmpstartD = new Date(year, Number(monthstringtonumber(month)), Number(dayofmonth), 0, 0, 0, 0);
+   let tmpstartD = new Date(year, Number(monthstringtonumber(month))-1, Number(dayofmonth));
+   tmpstartD.setDate(tmpstartD.getDate() +42);
+   
+   
+   $("#yearend").val(tmpstartD.getFullYear());
+   let tmpmonthend = tmpstartD.getMonth();
+   $("#monthend").val(numbertostring(tmpmonthend)); 
+   let tmpenddayofmonth = tmpstartD.getDate();
+   if (tmpenddayofmonth < 10)
+     tmpenddayofmonth = "0" + tmpenddayofmonth;
+	 
+   $("#daymonthend").val(tmpenddayofmonth);
+   
+  }
+  else{
+   $("#daymonthend").css("display", "none"); 
+   $("#monthend").css("display", "none"); 
+   $("#yearend").css("display", "none"); 
+   $("#chkrecsun").css("display", "none"); 
+   $("#lblchkrecsun").css("display", "none"); 
+   $("#chkrecmon").css("display", "none"); 
+   $("#lblchkrecmon").css("display", "none"); 
+   $("#chkrectue").css("display", "none"); 
+   $("#lblchkrectue").css("display", "none"); 
+   $("#chkrecwed").css("display", "none"); 
+   $("#lblchkrecwed").css("display", "none"); 
+   $("#chkrecthu").css("display", "none"); 
+   $("#lblchkrecthu").css("display", "none"); 
+   $("#chkrecfri").css("display", "none"); 
+   $("#lblchkrecfri").css("display", "none"); 
+   $("#chkrecsat").css("display", "none"); 
+   $("#lblchkrecsat").css("display", "none"); 
+
+   $('label[for="yearend"]').css('display', 'none');
+   $("#dialog-form").dialog("option", "height", 280);
+  }
+  if (document.getElementById("radiation").checked == true){
+    document.getElementById("chkrecsun").disabled = true;
+	document.getElementById("chkrecsat").disabled = true;
+  }
+  else
+  {
+    document.getElementById("chkrecsun").disabled = false;
+	document.getElementById("chkrecsat").disabled = false; 
+  }
+
+  $("#dialog-form").css('overflow', 'hidden');
+ 
+};
+
+
+var dialog, form;
+$(document).ready(function() {
+   dialog = $("#dialog-form").dialog({
+    autoOpen: false,
+    height: 250,
+    closeOnEscape: false,
+    width: 325,
+    modal: true,
+    resizable: false,
+    open: function(){
+
+    if (window.titletype == true)
+	  document.getElementById("radiation").checked = true;
+	else
+	  document.getElementById("chemotherapy").checked = true;
+	  
+    $("#dialog-form").css('overflow', 'hidden');
+	//if edit event then title "edit event", btn "save event", btc "delete event"
+	if (window.editevent == "true"){
+	  $( "#dialog-form" ).dialog( "option", "buttons", [ {text: "Save Event", click: submittedForm}, { text: "Delete", click: submittedcancelordelete }  ] );
+	  $("#dialog-form").dialog('option', 'title', 'Edit Event');
+	}
+	//if not edit make title "create new event", btn "create event", "cancel"
+	else if (window.editevent == "false"){
+	  $( "#dialog-form" ).dialog( "option", "buttons", [ {text: "Create Event", click: submittedForm}, { text: "Cancel", click: submittedcancelordelete }  ] );
+	  $("#dialog-form").dialog('option', 'title', 'Create New Event');
+	}
+
+
+	//no matter what we load up the following data:
+	
+    $("#startyear").val(window.startyear);
+    $("#startmonth").val(numbertostring(window.startmonth)); 
+	startmonthchanged();
+	$("#startdaymonth").val(window.startdayofmonth); 
+	$("#chkrec")[0].checked = window.checkedornot;
+
+    //if recurring fill more data
+    if (window.checkedornot == true){
+      $("#daymonthend").css("display", ""); 
+      $("#monthend").css("display", ""); 
+      $("#yearend").css("display", ""); 
+   	  $('label[for="yearend"]').css('display', "");   
+      let tmpendyear = window.end.getFullYear();
+      let tmpmonthend = window.end.getMonth();
+      let tmpenddayofmonth = window.end.getDate();
+      if (tmpenddayofmonth < 10)
+        tmpenddayofmonth = "0" + tmpenddayofmonth;
+      $("#yearend").val(tmpendyear);
+      $("#monthend").val(numbertostring(tmpmonthend)); 
+	  $("#daymonthend").val(tmpenddayofmonth); 
+	
+      $("#chkrecmon").css("display", ""); 
+      $("#lblchkrecmon").css("display", ""); 
+      $("#chkrectue").css("display", ""); 
+      $("#lblchkrectue").css("display", ""); 
+      $("#chkrecwed").css("display", ""); 
+      $("#lblchkrecwed").css("display", ""); 
+      $("#chkrecthu").css("display", ""); 
+      $("#lblchkrecthu").css("display", ""); 
+      $("#chkrecfri").css("display", ""); 
+      $("#lblchkrecfri").css("display", ""); 
+      $("#chkrecsat").css("display", ""); 
+      $("#lblchkrecsat").css("display", ""); 
+      $("#chkrecsun").css("display", ""); 
+      $("#lblchkrecsun").css("display", ""); 
+
+      if (window.recurringtype[0] == 1)
+        $("#chkrecsun")[0].checked = true;
+      if (window.recurringtype[1] == 1)
+        $("#chkrecmon")[0].checked = true;
+      if (window.recurringtype[2] == 1)
+        $("#chkrectue")[0].checked = true;
+      if (window.recurringtype[3] == 1)
+        $("#chkrecwed")[0].checked = true;
+      if (window.recurringtype[4] == 1)
+       $("#chkrecthu")[0].checked = true;
+      if (window.recurringtype[5] == 1)
+        $("#chkrecfri")[0].checked = true;
+      if (window.recurringtype[6] == 1)
+        $("#chkrecsat")[0].checked = true;
+			
+      $("#dialog-form").dialog("option", "height", 330);
+	  //fill the bottom fields up properly
+	  endmonthchanged();
+	  
+    }
+    else {
+
+      $("#chkrecmon").css("display", "none"); 
+      $("#lblchkrecmon").css("display", "none"); 
+      $("#chkrectue").css("display", "none"); 
+      $("#lblchkrectue").css("display", "none"); 
+      $("#chkrecwed").css("display", "none"); 
+      $("#lblchkrecwed").css("display", "none"); 
+      $("#chkrecthu").css("display", "none"); 
+      $("#lblchkrecthu").css("display", "none"); 
+      $("#chkrecfri").css("display", "none"); 
+      $("#lblchkrecfri").css("display", "none"); 
+      $("#chkrecsat").css("display", "none"); 
+      $("#lblchkrecsat").css("display", "none"); 
+      $("#chkrecsun").css("display", "none"); 
+      $("#lblchkrecsun").css("display", "none"); 
+      $("#daymonthend").css("display", "none"); 
+      $("#monthend").css("display", "none"); 
+      $("#yearend").css("display", "none"); 
+      $('label[for="yearend"]').css('display', 'none');
+      $("#dialog-form").dialog("option", "height", 280);
+	}
+    },
+      buttons: {
+	  Cancel: submittedcancelordelete,
+	  "Create Event": submittedForm,
+    },
+      close: function() {
+        form[ 0 ].reset();
+	   $(this).dialog("close");
+      }
+  });
+
+   form = dialog.find( "form" ).on( "submit", function( event ) {
+      event.preventDefault();
+  });
+
+});
+</script>
+
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    window.calendarobj = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'none'
+      },
+      defaultDate: '2020-01-15',
+	        navLinks: true, // can click day/week names to navigate views
+      selectable: true,
+      selectMirror: true,
+	  displayEventEnd: true,
+	  longPressDelay: 0,
+      eventClick: function(info) { 
+	    $("#dialog-form").dialog('option', 'title', 'Editing Event');
+        //set up the date information for recurring if necessary
+	    let event = info.event;
+        let tmpid = event.id;
+        let tmpgroupid = event._def.groupId;
+
+	    let title = event.title;
+	    if (title.startsWith("Radiation"))
+	      window.titletype = true;
+	    else
+	      window.titletype = false;
+        let tmpstart = event._instance.range.start;
+        let end = event._instance.range.end;
+
+       
+        window.editevent = "true";
+		
+		tmpstart.setDate(tmpstart.getDate() +1);
+        let tmpstartyear = tmpstart.getFullYear();
+        let tmpmonth = tmpstart.getMonth();
+        let tmpdayofmonth = tmpstart.getDate();
+        if (tmpdayofmonth < 10)
+          tmpdayofmonth = "0" + tmpdayofmonth;
+        let tmpdayofweek = tmpstart.getDay();
+
+        let tmp = tmpstart.getTime();
+        let tmptmp = tmpstart.toLocaleTimeString('it-IT');
+
+        window.startyear = tmpstartyear;
+        window.startdayofmonth = tmpdayofmonth;
+        window.startmonth = tmpmonth;
+
+		
+        if (tmpgroupid == ""){
+          window.currid = tmpid;
+          window.checkedornot = false;
+
+        }
+        else{
+		  let newstart = event._def.recurringDef.typeData.startRecur;
+		  newstart.setDate(newstart.getDate() +1);
+          let tmpstartyear = newstart.getFullYear();
+          let tmpmonth = newstart.getMonth();
+          let tmpdayofmonth = newstart.getDate();
+          if (tmpdayofmonth < 10)
+            tmpdayofmonth = "0" + tmpdayofmonth;
+          let tmpdayofweek = newstart.getDay();
+
+          window.startyear = tmpstartyear;
+          window.startdayofmonth = tmpdayofmonth;
+          window.startmonth = tmpmonth;
+		  		  
+		  let newend = event._def.recurringDef.typeData.endRecur;
+		  window.end = newend;
+          window.currid = tmpgroupid;
+          window.checkedornot = true;
+          let tmpdowdata = event._def.recurringDef.typeData.daysOfWeek;
+          window.recurringtype = [0,0,0,0,0,0,0];
+          //window.recurringtype[tmpdowdata[0]-1] = 1;
+          let tmprecurtype = tmpdowdata;
+          for (i in tmpdowdata)
+            if (tmpdowdata[i] == 0)
+	          window.recurringtype[0] = 1;
+            else if (tmpdowdata[i] == 1)
+	          window.recurringtype[1] = 1;
+            else if (tmpdowdata[i] == 2)
+	          window.recurringtype[2] = 1;
+            else if (tmpdowdata[i] == 3)
+	          window.recurringtype[3] = 1;
+            else if (tmpdowdata[i] == 4)
+	          window.recurringtype[4] = 1;
+            else if (tmpdowdata[i] == 5)
+	          window.recurringtype[5] = 1;
+            else if (tmpdowdata[i] == 6)
+	          window.recurringtype[6] = 1;		  
+        }
+        $("#dialog-form").dialog("open"); 
+      },
+
+      select: function(arg) {
+
+	    window.recurringonoroff = false;
+	    window.recurringtype = [0,0,0,0,0,0,0];
+        
+	    window.checkedornot = false;
+        let tmpstartdate = arg.start;
+		let tmpstartstring = arg.startstr;
+        let tmpstartdayofweek = tmpstartdate.getDay();
+        if (tmpstartdayofweek >= 1 & tmpstartdayofweek <=5)
+        window.recurringtype[tmpstartdayofweek-1] = 1;
+
+        let tmpstartmonth = tmpstartdate.getMonth();
+        let tmpstartyear = tmpstartdate.getFullYear();
+        let tmpstartdayofmonth = tmpstartdate.getDate();
+        if (tmpstartdayofmonth < 10)
+          tmpstartdayofmonth = "0" + tmpstartdayofmonth;
+
+        window.startdayofweek = tmpstartdayofweek;
+        window.startdayofmonth = tmpstartdayofmonth;
+        window.startyear = tmpstartyear;
+        window.startmonth = tmpstartmonth;
+        window.editevent = "false";
+	    window.titletype = true;
+		let tmpenddate = arg.end;
+		let tmpendstring = arg.endstr;
+   
+        calendarobj.unselect();
+        $("#dialog-form").dialog("open");
+      },
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      
+    });
+
+    calendarobj.render();
+  });
+
+</script>
+
+
+
+
+
+<style>
+
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+    label, input { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px;  margin-bottom:5px;}
+    h1 { font-size: 1.2em; margin: .6em 0; }
+    div#users-contain { height: 1000px; width: 350px; margin: 20px 0; }
+    div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+    div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+    .ui-dialog{top: 125px !important;} .ui-state-error { padding: .3em; }
+	.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+    display: none;
+}
+
+</style>
+
+<style>
+
+ .fc-day-grid-event .fc-content{ white-space: normal!important; }
+
+</style>
+
+</head>
+<body>
+
+  <div id="calendar"></div>
+
+<div id="dialog-form" title="Create New Event"><form>
+  <fieldset>
+  <input onchange="radioswitched()" id="radiation" type="radio" name="title" value="Radiation"> 
+  <label style="position: absolute; top: 33px; left: 40px;" for="radiation">Radiation Therapy</label>  
+  <input text="sdssd" onchange="radioswitched()" id="chemotherapy" style="position: absolute; top: 32px; left: 170px;" type="radio" name="title" value="Chemotherapy"> 
+  <label style="position: absolute; top: 33px; left: 190px;" for="chemotherapy">Chemotherapy</label>  
+    <label style="position: absolute; top: 60px; left: 20px;" for="startyear">Date</label>  
+    <select style="position: absolute; top: 80px; left: 20px;"  name="startyear" id="startyear">  
+      <option>2030</option>  
+      <option>2029</option>  
+      <option>2028</option> 
+      <option>2027</option> 
+      <option>2026</option>  
+      <option>2025</option>  
+      <option>2024</option>  
+      <option>2023</option>  
+      <option>2022</option>    
+      <option>2021</option>  
+      <option>2020</option>
+      <option selected="selected">2019</option> 
+      <option >2018</option>   
+    </select>  
+    
+    <select style="position: absolute; top: 80px; left: 105px;" onchange="startmonthchanged()"  name="startmonth" id="startmonth">  
+      <option>January</option> 
+      <option>February</option>  
+      <option selected="selected">March</option>  
+      <option>April</option>  
+      <option>May</option>  
+      <option>June</option>    
+      <option>July</option>  
+      <option>August</option>  
+      <option>September</option>  
+      <option>October</option>  
+      <option>November</option>  
+      <option>December</option>  
+    </select>  
+    <select style="position: absolute; top: 80px; left: 225px;" name="startdaymonth" id="startdaymonth" style="display: '';">  
+      <option>31</option> 
+      <option>30</option>  
+      <option>29</option>  
+      <option>28</option>  
+      <option>27</option>  
+      <option>26</option>    
+      <option>25</option>  
+      <option>24</option>  
+      <option>23</option>  
+      <option>22</option>    
+      <option>21</option>  
+      <option>20</option>
+      <option selected="selected">19</option> 
+      <option>18</option>  
+      <option>17</option>  
+      <option>16</option>  
+      <option>15</option>  
+      <option>14</option>    
+      <option>13</option>  
+      <option>12</option>  
+      <option>11</option> 
+      <option>10</option>  
+      <option>09</option>  
+      <option>08</option>  
+      <option>07</option>  
+      <option>06</option>    
+      <option>05</option>  
+      <option>04</option>
+      <option>03</option> 
+      <option>02</option>  
+      <option>01</option>  
+    </select>  
+
+	
+    <label id = "lblchkrec" style="position: absolute; top: 115px; left: 20px;" for="chkrec">Recurring</label>
+    <input style="position: absolute; top: 135px; left: 20px;" type="checkbox" name="chkrec" id="chkrec" onchange="checkboxswitched()">  
+    <label id = "lblchkrecsun" style="position: absolute; top: 115px; left: 100px;" for="chkrecsun">Sun</label>
+    <input style="position: absolute; top: 135px; left: 100px;" type="checkbox" name="chkrecsun" id="chkrecsun">  
+	<label id = "lblchkrecmon" style="position: absolute; top: 115px; left: 130px;" for="chkrecmon">Mon</label>
+    <input style="position: absolute; top: 135px; left: 130px;" type="checkbox" name="chkrecmon" id="chkrecmon">  
+    <label id = "lblchkrectue" style="position: absolute; top: 115px; left: 160px;" for="chkrectue">Tue</label>
+    <input style="position: absolute; top: 135px; left: 160px;" type="checkbox" name="chkrectue" id="chkrectue">  
+    <label id = "lblchkrecwed" style="position: absolute; top: 115px; left: 190px;" for="chkrecwed">Wed</label>
+    <input style="position: absolute; top: 135px; left: 190px;" type="checkbox" name="chkrecwed" id="chkrecwed">  
+    <label id = "lblchkrecthu" style="position: absolute; top: 115px; left: 220px;" for="chkrecthu">Thu</label>
+    <input style="position: absolute; top: 135px; left: 220px;" type="checkbox" name="chkrecthu" id="chkrecthu">  
+    <label id = "lblchkrecfri" style="position: absolute; top: 115px; left: 250px;" for="chkrecfri">Fri</label>
+    <input style="position: absolute; top: 135px; left: 250px;" type="checkbox" name="chkrecfri" id="chkrecfri"> 
+    <label id = "lblchkrecsat" style="position: absolute; top: 115px; left: 280px;" for="chkrecsat">Sat</label>
+    <input style="position: absolute; top: 135px; left: 280px;" type="checkbox" name="chkrecsat" id="chkrecsat"> 	
+
+    <label style="position: absolute; top: 165px; left: 20px;" for="yearend">Ends</label>  
+    <select style="position: absolute; top: 185px; left: 20px;" name="yearend" id="yearend">
+      <option>2030</option>  
+      <option>2029</option>  
+      <option>2028</option>   
+      <option>2027</option> 
+      <option>2026</option>  
+      <option>2025</option>  
+      <option>2024</option>  
+      <option>2023</option>  
+      <option>2022</option>    
+      <option>2021</option>  
+      <option selected="selected">2020</option>
+      <option >2019</option> 
+    </select>  
+    <select style="position: absolute; top: 185px; left: 105px;" onchange="endmonthchanged()" name="monthend" id="monthend">  
+      <option selected="selected" >January</option> 
+      <option>February</option>  
+      <option>March</option>  
+      <option>April</option>  
+      <option>May</option>  
+      <option>June</option>    
+      <option>July</option>  
+      <option>August</option>  
+      <option>September</option>  
+      <option>October</option>  
+      <option>November</option>  
+      <option >December</option>  
+    </select>  
+    <select style="position: absolute; top: 185px; left: 225px;" name="daymonthend" id="daymonthend">  
+      <option>31</option> 
+      <option>30</option>  
+      <option>29</option>  
+      <option>28</option>  
+      <option>27</option>  
+      <option>26</option>    
+      <option>25</option>  
+      <option>24</option>  
+      <option>23</option>  
+      <option>22</option>    
+      <option>21</option>  
+      <option>20</option>
+      <option selected="selected">19</option> 
+      <option>18</option>  
+      <option>17</option>  
+      <option>16</option>  
+      <option>15</option>  
+      <option>14</option>    
+      <option>13</option>  
+      <option>12</option>  
+      <option>11</option> 
+      <option>10</option>  
+      <option>09</option>  
+      <option>08</option>  
+      <option>07</option>  
+      <option>06</option>    
+      <option>05</option>  
+      <option>04</option>
+      <option>03</option> 
+      <option>02</option>  
+      <option>01</option>  
+    </select>  
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+  </fieldset>
+</form></div>
+ 
+
+</body>
+</html>
