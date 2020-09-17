@@ -25,13 +25,18 @@ function showValue(newValue, resultDiv) {
 
 				Number(avgval);
 				//document.write(avgval);
+			        // added middle part. 2020, Sep 15th. Hw.
 				if (avgval>='0'&&avgval <= '98') {
 					document.getElementById('myBar').style.display= "block";
 					document.getElementById("demo").innerHTML = "Please Speak to Your Healthcare Team for More Information.";
+				}else if(avgval>='49'&&avgval<='75'){
+					document.getElementById('myBar').style.display="block";
+					document.getElementById("demo").innerHTML = "You're in the middle of~ ";
 				}else if(avgval>='99'){
 					document.getElementById('myBar').style.display="block";
 					document.getElementById("demo").innerHTML = "The Benefits Outweigh the Risks of Treatment. Can We Proceed with Booking Your Appointment?";
 				}
+			
 			}
 
 f_color;
